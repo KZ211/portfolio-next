@@ -1,3 +1,10 @@
+import Image from "next/image";
+
 export default function MainHeaderBackground(){
-    return <div className="bg-gradient-to-b from-indigo-500 w-full absolute h-full -z-10"/>
+    const imgBack = 'https://drive.google.com/uc?id=1rDNocw-jXhWP3IlhgF_sASphGqV9rGvf';
+    return <div className="
+     bg-transparent
+    w-full absolute h-full -z-10">
+        <Image src={imgBack} fill/>
+    </div>
 }
