@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function ProyectoItem({ title, slug, image}) {
   return (
-    <article>
+    <article className='flex flex-col justify-between h-full border-solid overflow-hidden'>
       <header>
         <div>
           <Image src={image} alt={title} width={100} height={100} />
@@ -13,7 +13,7 @@ export default function ProyectoItem({ title, slug, image}) {
         </div>
       </header>
       <div>
-        <div>
+        <div className='inline-block'>
           <Link href={`/portfolio/${slug}`}>View Details</Link>
         </div>
       </div>

@@ -1,5 +1,5 @@
 export default function PortfolioSlug(){
     return <>
-        <h1>PortFolio</h1>
+        <h1>PortFolio Slug</h1>
     </>
 }
