@@ -9,11 +9,10 @@ export default function AddProyectoPage() {
   const [state, formAction] = useFormState(shareProyecto, {message:null});
   return (
     <>
-      <header className='flex justify-center align-middle my-8'>
+      <header className='flex justify-center my-8'>
         <h1>
-          Share your <span>favorite meal</span>
+          Compartir mas proyectos
         </h1>
-        <p>Or any other meal you feel needs sharing!</p>
       </header>
       <main>
         <form action={formAction}>
@@ -28,6 +27,10 @@ export default function AddProyectoPage() {
           <p className='flex justify-center my-8'>
             <label htmlFor='description'>Description</label>
             <textarea type='text' id='descrpition' name='description'/>
+          </p>
+          <p className='flex justify-center my-8'>
+            <label htmlFor='link'>Link</label>
+            <input type='link' id='link' name='link'/>
           </p>
           <p className='flex justify-center my-8'>
           <ProyectosFormSubmit/>
