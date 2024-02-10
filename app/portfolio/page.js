@@ -11,7 +11,7 @@ async function Proyectos(){
 export default function PortFolioPage(){
     
     return <>
-        <header className="flex justify-center">
+        <header className="flex justify-center text-xl text-white">
             <h1>Mis Proyectos</h1>
         </header>
         <main className="flex justify-center">

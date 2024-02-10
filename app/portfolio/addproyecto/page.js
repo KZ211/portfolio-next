@@ -25,7 +25,11 @@ export default function AddProyectoPage() {
             <label htmlFor='image'>Image</label>
             <input type='text' id='image' name='image'/>
           </p>
-          <p>
+          <p className='flex justify-center my-8'>
+            <label htmlFor='description'>Description</label>
+            <textarea type='text' id='descrpition' name='description'/>
+          </p>
+          <p className='flex justify-center my-8'>
           <ProyectosFormSubmit/>
           </p>
         </form>

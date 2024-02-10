@@ -1,22 +1,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function ProyectoItem({ title, slug, image}) {
+export default function ProyectoItem({ title, slug, image, description}) {
   return (
-    <article className='flex flex-col justify-between h-full border-solid overflow-hidden'>
-      <header>
-        <div>
-          <Image src={image} alt={title} width={100} height={100} />
-        </div>
-        <div>
-          <h2>{title}</h2>
-        </div>
-      </header>
-      <div>
-        <div className='inline-block'>
-          <Link href={`/portfolio/${slug}`}>View Details</Link>
-        </div>
-      </div>
-    </article>
+    <Link href={`/portfolio/${slug}`}>
+      <article className='flex flex-col justify-between h-full border-solid overflow-hidden hover:text-white'>
+        <header className='flex justify-between'>
+            <Image className='flex hover:opacity-10 justify-center absolute w-full h-full rounded-sm' src={image} alt={title} width={1000} height={1000} />
+          <section className='w-full h-60 -z-10'>
+            <h2 className='text-xl'>{title}</h2>
+            <p className='text-base text-center m-2'>
+              {description}
+            </p>
+          </section>
+        </header>
+      </article>
+    </Link>
   );
 }
