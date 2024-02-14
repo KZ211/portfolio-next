@@ -27,7 +27,7 @@ export default function Home() {
                 Sr en programacion y licenciado en Desarrollo de Experiencias Virtuales.</p>
               <div className="flex justify-around mt-8">
                 <Link className="border backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-md px-8 py-2 text-xl bg-gradient-to-r from-indigo-700" href="/portfolio">Ver Proyectos</Link>
-                <Link className="border backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-md px-8 py-2 text-xl" href="/contactame">Dejar comentario</Link>
+                <Link className="border backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-md px-8 py-2 text-xl" href="https://docs.google.com/document/d/17VeumtLSh_Ejs1vRHFdE1-_tJW5kojaiL845JQp2W48/edit?usp=sharing" target="_blank">Ver mi CV</Link>
               </div>
             </secction>
         </div>
