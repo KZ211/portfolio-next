@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { DiMysql, DiSqllite, DiPython, DiJava, DiJavascript, DiReact, DiHtml5, DiCss3, DiPhp, DiWordpress } from "react-icons/di";
-import { SiNextdotjs } from "react-icons/si";
+import { SiGit, SiNextdotjs } from "react-icons/si";
 
 export const metadata = {
     title: 'Sobre Mi',
@@ -42,6 +42,7 @@ export default function SobreMiPage(){
                         <DiSqllite className="w-16 h-16"/>
                         <DiPython className="w-16 h-16"/>
                         <DiPhp className="w-16 h-16"/>
+                        <SiGit className="w-14 h-14"/>
                     </div>
                 </div>
             </section>

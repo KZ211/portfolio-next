@@ -5,6 +5,6 @@ export default function MainHeaderBackground(){
     return <div className="
      bg-transparent
     w-full absolute h-full -z-10">
-        <Image src={imgBack} alt='Background con paisaje de montañas y colores' fill/>
+        <Image className="saturate-150" src={imgBack} alt='Background con paisaje de montañas y colores' fill/>
     </div>
 }
