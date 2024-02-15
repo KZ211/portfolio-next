@@ -1,5 +1,6 @@
 export default function ContactamePage(){
-    return <>
-        <h1>Contactame</h1>
-    </>
+    return <header>
+        <h1>Redes Sociales</h1>
+        
+    </header>
 }

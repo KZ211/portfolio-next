@@ -2,6 +2,11 @@ import ProyectosGrid from "@/components/proyecto/proyectos-grid";
 import { getProyectos } from "@/lib/proyectos";
 import { Suspense } from "react";
 
+export const metadata = {
+    title: 'PortFolio',
+    description: 'Mis Proyectos.',
+  };
+
 async function Proyectos(){
     const proyectos = await getProyectos();
     

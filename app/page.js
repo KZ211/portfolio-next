@@ -23,7 +23,7 @@ export default function Home() {
               </h1>
               <h3 className="mb-5" ><b>Full Stack Developer</b></h3>
               <p className="text-lg backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-xl">Hola, me llamo Alexis Jares, soy estudiante de Ingenieria en Computacion en la Universidad de Tres de Febrero (UNTREF) Y desarrollador web, la tecnologia es mi pasion desde muy pequeño, por eso sacrifique todo para trabajar en el area que tanto me apasiona. <br/> 
-                La persona que puso toda su confianza y esmero en verme crecer, la cual me guio y me dio todas las herramientas que necesitaba para formarme hasta llegar a lo que soy, es <a className="text-xl font-bold" href="https://www.linkedin.com/in/stevearagonsite/?originalSubdomain=ar" target="blank">Steven Aragon</a>, 
+                La persona que puso toda su confianza y esmero en verme crecer, la cual me guio y me dio todas las herramientas que necesitaba para formarme hasta llegar a lo que soy, es <a className="text-xl font-bold" href="https://www.linkedin.com/in/stevearagonsite/?originalSubdomain=ar" target="blank" rel="noopener noreferrer">Steven Aragon</a>, 
                 Sr en programacion y licenciado en Desarrollo de Experiencias Virtuales.</p>
               <div className="flex justify-around mt-8">
                 <Link className="border backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-md px-8 py-2 text-xl bg-gradient-to-r from-indigo-700" href="/portfolio">Ver Proyectos</Link>
