@@ -13,7 +13,7 @@ export default function Home() {
       <header>
         <div className="flex justify-between items-center">  
           <Image 
-            className="mt-10 ml-72 rounded-md"
+            className="mt-10 ml-72 rounded-md transition-opacity duration-300 ease-in-out hover:opacity-75"
             src={alexisImage} 
             alt='Alexis sonriendo con un saco y una remera blanca' 
             width={300} height={300}/>
@@ -26,8 +26,8 @@ export default function Home() {
                 La persona que puso toda su confianza y esmero en verme crecer, la cual me guio y me dio todas las herramientas que necesitaba para formarme hasta llegar a lo que soy, es <a className="text-xl font-bold" href="https://www.linkedin.com/in/stevearagonsite/?originalSubdomain=ar" target="blank" rel="noopener noreferrer">Steven Aragon</a>, 
                 Sr en programacion y licenciado en Desarrollo de Experiencias Virtuales.</p>
               <div className="flex justify-around mt-8">
-                <Link className="border backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-md px-8 py-2 text-xl bg-gradient-to-r from-indigo-700" href="/portfolio">Ver Proyectos</Link>
-                <Link className="border backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-md px-8 py-2 text-xl" href="https://docs.google.com/document/d/17VeumtLSh_Ejs1vRHFdE1-_tJW5kojaiL845JQp2W48/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Ver mi CV</Link>
+                <Link className="border backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-md px-8 py-2 text-xl bg-gradient-to-r from-indigo-700 transition-opacity duration-300 ease-in-out hover:opacity-50" href="/portfolio">Ver Proyectos</Link>
+                <Link className="border backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-md px-8 py-2 text-xl transition-opacity duration-300 ease-in-out hover:opacity-50" href="https://docs.google.com/document/d/17VeumtLSh_Ejs1vRHFdE1-_tJW5kojaiL845JQp2W48/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Ver mi CV</Link>
               </div>
             </secction>
         </div>

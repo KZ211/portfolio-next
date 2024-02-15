@@ -19,7 +19,7 @@ export default function SobreMiPage(){
                 <h3 className="font-bold text-sm">Mis comienzos</h3>
                 <p className="mx-2">Vengo de una familia trabajadora, humilde y respetuosa, naci en Presidente Derqui, partido de Pilar. Desde pequeño tengo una pasion por la tecnologia, a los 8 años tuve mi primer neetbook, en ese entonces no teniamos la posibilidad economica de contratar un servicio de internet, en mi primer contacto vi la cantidad de contenido y de aprendizaje en la palma de mi mano, entonces mi interes por la programacion se hizo enorme al saber que era el medio para tener siempre ese conocimiento disponible, tuve 2 tratamientos por cancer y en el transcurso de mi recuperacion conoci a <span className="font-bold">Steve Aragon</span> en una fundacion haciendo voluntariado, con el charlabamos mucho sobre computadoras, quien pensaria que nuestros caminos se unirian por esta pasion. <br/> Steve me brindo cursos, su apoyo, y toda su confianza en creer que yo llegaria lejos, hoy en dia mi conocimiento en el rubro es alto, y todo se lo debo a el y a mi entusiasmo por aprender.</p>
             </section>
-            <Image className="rounded-lg size-auto"
+            <Image className="rounded-lg size-auto transition-opacity duration-300 ease-in-out hover:opacity-75"
                 src={images.alexis} 
                 alt="Alexis sentado `sobre un cordon con un buzo rosa, lentes de sol y un pantalon blanco" 
                 width={400} 
