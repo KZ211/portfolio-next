@@ -17,7 +17,7 @@ export default function PortFolioPage(){
     
     return <>
         <header id='portfolio' className="flex justify-center text-xl text-white">
-            <h1>Mis Proyectos</h1>
+            <h1>My Projects</h1>
         </header>
         <main className="flex justify-center pb-64">
             <Suspense fallback={<p>Fetching proyecto</p>}>

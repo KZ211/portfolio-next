@@ -9,14 +9,14 @@ export default function HomePage(){
             <div className="flex flex-row items-center">
             <Image className="mr-5 mt-4 rounded-xl transition ease-in duration-300 hover:opacity-30"
             src={myImage}
-            alt="Fotografia de Alexis mirando hacia la derecha mientras camina por una vereda" 
+            alt="Photograph of Alexis looking to the right while walking on a sidewalk" 
             width={300} 
             height={300}/>
             <section className="text-white text-center">
             <h1 className="
                 sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-7xl
                 ml-5
-                font-exo-2 font-bold transition-all ease-in duration-300 hover:text-8xl border-b-4">
+                font-exo-2 font-bold transition-all ease-in duration-300 hover:scale-110 border-b-4">
                 Alexis Jares
             </h1>
             <h3 className="text-2xl transition-all ease-in duration-300 hover:text-3xl" ><b>Full Stack Developer</b></h3>
@@ -29,7 +29,7 @@ export default function HomePage(){
               <p className="
                sm:text-sm md:text-md lg:text-lg xl:text-lg 2xl:text-lg
                sm: md:max-w-xl lg:max-w-max 2xl:max-w-5xl
-               backdrop-filter backdrop-blur-lg backdrop-saturate-100 rounded-xl transition-all ease-in duration-300 hover:text-2xl">Hello, my name is Alexis Jares. I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that I&apos;</p>
+               backdrop-filter backdrop-blur-lg backdrop-saturate-100 rounded-xl transition-all ease-in duration-300">Hello, my name is Alexis Jares. I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that I&apos;</p>
               <div className="
                 sm: md:mt-1 lg:mt-4 xl:mt-4 2xl:mt-8
                 flex justify-around">
@@ -37,7 +37,7 @@ export default function HomePage(){
                     My Projects
                 </Link>
                 <Link className="sm: md:px-6 lg:px-6 xl:px-6 2xl:px-8 sm: md:py-1 lg:py-1 xl:py-1 2xl:py-2 sm: md:text-md lg:text-lg xl:text-lg 2xl:text-2xl border backdrop-filter backdrop-blur-lg backdrop-saturate-150 rounded-md transition-opacity duration-300 ease-in-out hover:opacity-50" href="https://docs.google.com/document/d/17VeumtLSh_Ejs1vRHFdE1-_tJW5kojaiL845JQp2W48/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
-                    Ver mi CV
+                  See my CV
                 </Link>
               </div>
 
