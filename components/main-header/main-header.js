@@ -8,7 +8,7 @@ export default function MainHeader(){
     return <>
         <header className="flex items-center justify-between px-32 pt-14 mx-32 border-b-2 drop-shadow-lg">
             <Link className="hover:border-r-8 hover:bg-white ease-out duration-300" href='/'>
-            <Image src={logoAlexisUrl} width={100} height={100}/>
+            <Image alt="Logo AJ" src={logoAlexisUrl} width={100} height={100}/>
             </Link>
             
             <nav >

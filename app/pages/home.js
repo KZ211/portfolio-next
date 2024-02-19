@@ -8,7 +8,8 @@ export default function HomePage(){
         <div className="flex sm:flex-col md:flex-col lg:flex-col justify-between items-center">  
             <div className="flex flex-row items-center">
             <Image className="mr-5 mt-4 rounded-xl transition ease-in duration-300 hover:opacity-30"
-            src={myImage} 
+            src={myImage}
+            alt="Fotografia de Alexis mirando hacia la derecha mientras camina por una vereda" 
             width={300} 
             height={300}/>
             <section className="text-white text-center">
@@ -28,7 +29,7 @@ export default function HomePage(){
               <p className="
                sm:text-sm md:text-md lg:text-lg xl:text-lg 2xl:text-lg
                sm: md:max-w-xl lg:max-w-max 2xl:max-w-5xl
-               backdrop-filter backdrop-blur-lg backdrop-saturate-100 rounded-xl transition-all ease-in duration-300 hover:text-2xl">Hello, my name is Alexis Jares. I'm a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I've sacrificed everything to work in a field that I'</p>
+               backdrop-filter backdrop-blur-lg backdrop-saturate-100 rounded-xl transition-all ease-in duration-300 hover:text-2xl">Hello, my name is Alexis Jares. I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that I&apos;</p>
               <div className="
                 sm: md:mt-1 lg:mt-4 xl:mt-4 2xl:mt-8
                 flex justify-around">
