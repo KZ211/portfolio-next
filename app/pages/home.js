@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function HomePage(){
     const myImage = 'https://drive.google.com/uc?id=1BwVe9HB2NfjvB72hK5tJz2SjxCm6brIm';
     return <>
-        <header id='home' className="flex md:flex-col justify-center items-center py-40">
+        <header id='home' className="flex md:flex-col justify-center items-center pb-40 pt-5">
         <div className="flex sm:flex-col md:flex-col lg:flex-col justify-between items-center">  
             <div className="flex flex-row items-center">
             <Image className="mr-5 mt-4 rounded-xl transition ease-in duration-300 hover:opacity-30"
