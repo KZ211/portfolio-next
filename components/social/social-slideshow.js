@@ -1,8 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Card from './card';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
+
+import Card from './card';
 
 const social = [
     {card:<Card href='https://github.com/KZ211' icon={<SiGithub size={100} className='transition-all duration-300 ease-in-out hover:size-20'/>} text='GitHub'/>},

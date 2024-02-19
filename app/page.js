@@ -10,13 +10,11 @@ export const metadata = {
 
 export default function Home() {
   return (
-  <>
-      <header>
-        <HomePage/>      
-        <PortFolioPage/>
-        <AboutMe/>
-        <ContactMe/>
-      </header>
-  </>
+    <header className="overflow-y-auto h-screen flex flex-col scroll-snap-type-y-mandatory">
+      <HomePage/>      
+      <PortFolioPage/>
+      <AboutMe/>
+      <ContactMe/>
+    </header>
 );
 }
