@@ -19,7 +19,7 @@ export default function HomePage(){
                 font-exo-2 font-bold transition-all ease-in duration-300 hover:scale-110 border-b-4">
                 Alexis Jares
             </h1>
-            <h3 className="text-2xl transition-all ease-in duration-300 hover:text-3xl" ><b>Full Stack Developer</b></h3>
+            <h3 className="text-2xl transition-all ease-in duration-300 hover:text-3xl" ><b>Frontend Developer</b></h3>
             </section>
 
             </div>
