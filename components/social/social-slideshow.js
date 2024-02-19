@@ -2,13 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import Card from './card';
-import { SiFacebook, SiGit, SiGithub, SiGithubpages, SiInstagram, SiLinkedin, SiWhatsapp } from 'react-icons/si';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
 
 const social = [
-    {card:<Card href='https://wa.me/qr/RDQTMWNI7G53D1' icon={<SiWhatsapp size={100} className='transition-all duration-300 ease-in-out hover:size-20'/>} text='android'/>},
-    {card:<Card href='https://github.com/KZ211' icon={<SiGithub size={100} className='transition-all duration-300 ease-in-out hover:size-20'/>} text='android'/>},
-    {card:<Card href='https://www.linkedin.com/in/alexis-jares-b70857235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' icon={<SiLinkedin size={100} className='transition-all duration-300 ease-in-out hover:size-20'/>} text='android'/>},    
-    {card:<Card href='https://www.instagram.com/alexis._.jares?igsh=MWpzYTNrNWI1Ynh1ZA==' icon={<SiInstagram size={100} className='transition-all duration-300 ease-in-out hover:size-20'/>} text='android'/>}
+    {card:<Card href='https://github.com/KZ211' icon={<SiGithub size={100} className='transition-all duration-300 ease-in-out hover:size-20'/>} text='GitHub'/>},
+    {card:<Card href='https://www.linkedin.com/in/alexis-jares-b70857235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' icon={<SiLinkedin size={100} className='transition-all duration-300 ease-in-out hover:size-20'/>} text='LinkedIn'/>},    
 ]
 
 export default function SocialSlideShow() {

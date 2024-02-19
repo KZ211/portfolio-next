@@ -7,12 +7,12 @@ export const metadata = {
     description: 'Aptitudes e info.',
   };
 
-export default function SobreMiPage(){
+export default function AboutMe(){
     const images = {
         alexis:'https://drive.google.com/uc?id=1km5xxzjNk4WitcvzbniCktIhn9dNX1I9',
     };
     
-    return <header className="flex flex-col justify-center items-center mt-8 text-white">
+    return <header id='aboutme' className="flex flex-col justify-center items-center mt-8 text-white">
         <div className="flex flex-row">
             <section className=" max-w-96 text-center backdrop-blur-lg backdrop-filter backdrop-saturate-150 rounded-lg">
                 <h1 className="text-3xl underline">Presentacion</h1>
