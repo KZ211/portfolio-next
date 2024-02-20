@@ -16,10 +16,10 @@ async function Proyectos(){
 export default function PortFolioPage(){
     
     return <>
-        <header id='portfolio' className="flex justify-center text-xl text-white">
+        <header id='portfolio' className="hidden lg:flex justify-center text-xl text-white">
             <h1>My Projects</h1>
         </header>
-        <main className="flex justify-center pb-64">
+        <main className="hidden lg:flex justify-center pb-64">
             <Suspense fallback={<p>Fetching proyecto</p>}>
                 <Proyectos/>
             </Suspense>

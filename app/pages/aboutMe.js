@@ -13,7 +13,7 @@ export default function AboutMe(){
     };
     const styleIcons = 'my-1 w-16 h-16 transition-all ease-in hover:scale-150';
     
-    return <header id='aboutme' className="flex flex-col justify-center items-center mt-8 text-white">
+    return <header id='aboutme' className="hidden snap-center lg:flex flex-col justify-center items-center mt-8 text-white">
         <div className="flex flex-row">
             <section className=" max-w-96 text-center backdrop-blur-lg backdrop-filter backdrop-saturate-150 rounded-lg">
                 <h1 className="text-3xl underline">Presentation</h1>
@@ -24,12 +24,6 @@ export default function AboutMe(){
                     I have extensive knowledge focused on front-end development, and I would love to continue growing, learning, and experimenting with new skills, both professionally and socially.
                 </p>
             </section>
-            <Image className="rounded-lg size-auto transition-opacity duration-300 ease-in-out hover:opacity-75"
-                src={images.alexis} 
-                alt="Alexis sentado `sobre un cordon con un buzo rosa, lentes de sol y un pantalon blanco" 
-                width={400} 
-                height={400}
-                />
             <section className="flex flex-col items-center max-w-80 backdrop-blur-lg backdrop-filter backdrop-saturate-150 rounded-lg">
                 <h1 className="font-bold text-1xl underline mx-2">Lenguajes y Frameworks</h1>
                 <div className="flex flex-row">
