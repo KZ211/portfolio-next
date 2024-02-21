@@ -1,0 +1,29 @@
+.navmenu{
+    z-index: -1;
+    background-color: white;
+    perspective-origin: 0%;
+    transform-origin: 0%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+.active{
+    z-index: -1;
+    background-color: blue;
+    perspective-origin: 0%;
+    transform-origin: 0%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}

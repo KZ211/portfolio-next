@@ -20,6 +20,40 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        mergeAndRotateTop: {
+          '50%': { transform: 'translateY(5px)' },
+          '100%': { transform: 'translateY(5px) rotate(45deg)' }
+        },
+        mergeAndRotateTopOut: {
+          '50%': { transform: 'rotate(0deg) translateY(6px)'},
+          '100%': { transform: 'translateY(0px) rotate(0deg)' }
+        },
+        mergeAndRotateMid: {
+          '50%': { transform: 'translateY(0px)' },
+          '100%': { transform: 'translateY(0) rotate(45deg)' }
+        },
+        mergeAndRotateMidOut: {
+          '50%': { transform: 'rotate(0px)' },
+          '100%': { transform: 'translateY(0) rotate(0deg)' }
+        },
+        mergeAndRotateBottom: {
+          '50%': { transform: 'translateY(-5px)' },
+          '100%': { transform: 'translateY(-6px) rotate(-45deg)'}
+        },
+        mergeAndRotateBottomOut: {
+          '50%': { transform: 'rotate(0) translateY(-5px)' },
+          '100%': { transform: 'translateY(0px) rotate(0deg)'}
+        }
+      },
+      animation: {
+        mergeAndRotateTop: 'mergeAndRotateTop 0.4s ease-in-out forwards',
+        mergeAndRotateTopOut: 'mergeAndRotateTopOut 0.7s ease-in-out forwards',
+        mergeAndRotateMid: 'mergeAndRotateMid 0.4s ease-in-out forwards',
+        mergeAndRotateMidOut: 'mergeAndRotateMidOut 0.4s ease-in-out forwards',
+        mergeAndRotateBottom: 'mergeAndRotateBottom 0.4s ease-in-out forwards',
+        mergeAndRotateBottomOut: 'mergeAndRotateBottomOut 0.7s ease-in-out forwards'
+      }
     },
   },
   plugins: [],

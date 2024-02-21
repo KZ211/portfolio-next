@@ -1,4 +1,5 @@
 import "./globals.css";
+import NavBar from "./components/navbar/nav-var";
 
 export const metadata = {
   title: "Home",
@@ -8,8 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <body className=' lg:overflow-hidden'>
-        {children}
+        <body>
+          <NavBar/>
+          {children}
         </body>
     </html>
   );
