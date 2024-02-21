@@ -18,12 +18,13 @@ export default function Home() {
           <h1 className="text-5xl font-bold uppercase my-0">Jares</h1>
         </div>
       </div>
-      <div className="self-center grid-row-span-1">
-        <div className="container text-sm max-w-sm">
-          <p className="uppercase"> Lorem ipsum </p>
+      <div className="self-start grid-row-span-1">
+        <div className="container text-md max-w-sm">
+          <p className="uppercase font-thin">I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.
+ </p>
         </div>
       </div>
-      <div className="self-start grid-row-span-1">
+      <div className="self-center grid-row-span-1">
         <div className="container text-sm max-w-sm">
           <p className="uppercase"> React Frontend Developer </p>
         </div>
