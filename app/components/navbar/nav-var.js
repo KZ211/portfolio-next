@@ -7,7 +7,7 @@ import { useState } from "react";
 import classes from './nav-var.module.css';
 import 'animate.css';
 
-export default function NavBar({openvar}){
+export default function NavBar(){
     const [currentState, setCurrentState] = useState(true);
 
     function changeHandler(event){
@@ -16,7 +16,7 @@ export default function NavBar({openvar}){
     }
 
     const logoImage = 'https://drive.google.com/uc?id=1_RReY9xp2cq_fpJQHTTafZNow3cNIqWQ';
-    return <div className="z-20 h-12 bg-white font-monserrat pt-0 px-5 top-0 bottom-auto left-0 right-0">
+    return <div className=" h-12 bg-white font-monserrat pt-0 px-5 top-0 bottom-auto left-0 right-0 relative z-10">
         <div className="max-w-6xl flex justify-between items-end mx-auto">
             <div className="inline-block max-w-full">
                 <Link className="max-w-full inline-block" href="/">
@@ -29,16 +29,16 @@ export default function NavBar({openvar}){
                     <div className={`w-10 h-px mb-1 bg-black transition-transform ease-in-out duration-300 ${currentState ? '-rotate-45 -translate-y-1 animate-mergeAndRotateBottomOut' : 'animate-mergeAndRotateBottom'}`}/>
             </div>
         </div>
-        <div className={`${currentState == true ? `animate__delay-1s animate__animated animate__fadeOutLeft ${classes.active}` : 'animate__animated animate__fadeInLeft'} ${currentState == true ? classes.navmenu : classes.active}`}>
+        <div className={`${currentState == true ? ` animate-fadeOutLeft ${classes.active}` : 'animate-fadeInLeft'} ${currentState == true ? classes.navmenu : classes.active}`}>
             <nav className="max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
                 <ul>
-                    <li className={`max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate__animated animate__fadeOutDown' : "animate__delay-1s animate__animated animate__fadeInUp"}`}>
+                    <li className={`z-10 max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}`}>
                         <Link className="text-6xl uppercase" href='/'>Home</Link>
                     </li>
-                    <li className={`max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate__animated animate__fadeOutDown' : "animate__delay-1s animate__animated animate__fadeInUp"}`}>
+                    <li className={`z-20 max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}`}>
                         <Link className="text-6xl uppercase " href='/projects'>Projects</Link>
                     </li>
-                    <li className={`max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate__animated animate__fadeOutDown' : "animate__delay-1s animate__animated animate__fadeInUp"}`}>
+                    <li className={`z-30 max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}`}>
                         <Link className="text-6xl uppercase" href='/blog'>Blog</Link>
                     </li>
                 </ul>

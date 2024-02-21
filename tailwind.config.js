@@ -16,7 +16,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'monserrat': ['Montserrat', 'sans-serif']
+        'monserrat': ['Montserrat', 'sans-serif'],
+        'bebas' : ['Bebas Neue', 'sans-serif']
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -47,7 +48,36 @@ module.exports = {
         mergeAndRotateBottomOut: {
           '50%': { transform: 'rotate(0) translateY(-5px)' },
           '100%': { transform: 'translateY(0px) rotate(0deg)'}
-        }
+        },
+        hiddenText: {
+          '0%': { clipPath: 'inset(0 0 0 0)' },
+          '100%': { clipPath: 'inset(0 0 100% 0)', transform: 'translateY(60px)' },
+        },
+        showText: {
+          '0%': { clipPath: 'inset(0 0 100% 0)', transform: 'translateY(60px)' },
+          '50%': { clipPath: 'inset(0 0 100% 0)', transform: 'translateY(60px)' },
+          '100%': { clipPath: 'inset(0 0 0 0)', transform: 'translateY(0px)' },
+        },
+        fadeInLeft: {
+          from: {
+            opacity: 0,
+            transform: 'translate3d(-100%, 0, 0)',
+          },
+          to: {
+            opacity: 1,
+            transform: 'translate3d(0, 0, 0)',
+          },
+        },
+        fadeOutLeft: {
+          from: {
+            opacity: 1,
+            transform: 'translate3d(0, 0, 0)',
+          },
+          to: {
+            opacity: 0,
+            transform: 'translate3d(-100%, 0, 0)',
+          },
+        },
       },
       animation: {
         mergeAndRotateTop: 'mergeAndRotateTop 0.4s ease-in-out forwards',
@@ -55,7 +85,11 @@ module.exports = {
         mergeAndRotateMid: 'mergeAndRotateMid 0.4s ease-in-out forwards',
         mergeAndRotateMidOut: 'mergeAndRotateMidOut 0.4s ease-in-out forwards',
         mergeAndRotateBottom: 'mergeAndRotateBottom 0.4s ease-in-out forwards',
-        mergeAndRotateBottomOut: 'mergeAndRotateBottomOut 0.7s ease-in-out forwards'
+        mergeAndRotateBottomOut: 'mergeAndRotateBottomOut 0.7s ease-in-out forwards',
+        hiddenText: 'hiddenText 0.5s ease-in-out forwards',
+        showText: 'showText 1s ease-in-out forwards',
+        fadeInLeft: 'fadeInLeft 0.5s ease-out',
+        fadeOutLeft: 'fadeOutLeft 1s ease-out forwards 0.5s',
       }
     },
   },

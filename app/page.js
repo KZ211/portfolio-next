@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export const metadata = {
   title: 'Home',
   description: 'Pagina principal del Portfolio.',
@@ -5,19 +7,30 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="py-10 px-2 grid grid-cols-1 grid-rows-5 gap-0 columns-xs auto-cols-fr col-span-1">
-      <div className="self-center columns-1">
-        <div className="overflow-hidden">
-          <h1 className="text-7xl row-start-1 uppercase my-0 font-semibold">Alexis</h1>
+    <div className='font-monserrat py-10 px-2 grid grid-rows-5 grid-cols-1 zIndex'>
+      <div className="self-end grid-row-span-1">
+        <div className="container overflow-hidden">
+          <h1 className="text-5xl font-bold font-monserrat uppercase my-0">Alexis</h1>
         </div>
-        <div className="overflow-hidden">
-          <h1 className="text-6xl uppercase my-0 font-semibold">Jares</h1>
+      </div>
+      <div className="self-start grid-row-span-1">
+        <div className="container overflow-hidden">
+          <h1 className="text-5xl font-bold uppercase my-0">Jares</h1>
         </div>
-        <div className="text-lg max-w-sm row-start-2 columns-1 row-end-1 col-span-1">
-          <p className="uppercase mb-2 mt-0"> Lorem Impsum </p>
+      </div>
+      <div className="self-center grid-row-span-1">
+        <div className="container text-sm max-w-sm">
+          <p className="uppercase"> Lorem ipsum </p>
         </div>
-        <div className="">
-
+      </div>
+      <div className="self-start grid-row-span-1">
+        <div className="container text-sm max-w-sm">
+          <p className="uppercase"> React Frontend Developer </p>
+        </div>
+      </div>
+      <div className="self-start grid-row-span-1">
+        <div className="container text-lg max-w-sm">
+          <Image className="h-24 w-84" src='https://assets-global.website-files.com/65bf5888f39a3740b13a154c/65bf5c5f9969f366af29ea2f_pexels-sarah-dorweiler-8968807%201.png' alt="/" width={340} height={80}/>
         </div>
       </div>
     </div>
