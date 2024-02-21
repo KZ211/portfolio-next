@@ -8,7 +8,7 @@ import classes from './nav-var.module.css';
 import 'animate.css';
 
 export default function NavBar({openvar}){
-    const [currentState, setCurrentState] = useState(false);
+    const [currentState, setCurrentState] = useState(true);
 
     function changeHandler(event){
         currentState == true ? setCurrentState(false):setCurrentState(true);
@@ -16,7 +16,7 @@ export default function NavBar({openvar}){
     }
 
     const logoImage = 'https://drive.google.com/uc?id=1_RReY9xp2cq_fpJQHTTafZNow3cNIqWQ';
-    return <div className=" z-40 h-12 bg-white pt-0 px-5 top-0 bottom-auto left-0 right-0">
+    return <div className="z-20 h-12 bg-white font-monserrat pt-0 px-5 top-0 bottom-auto left-0 right-0">
         <div className="max-w-6xl flex justify-between items-end mx-auto">
             <div className="inline-block max-w-full">
                 <Link className="max-w-full inline-block" href="/">
@@ -30,16 +30,16 @@ export default function NavBar({openvar}){
             </div>
         </div>
         <div className={`${currentState == true ? `animate__delay-1s animate__animated animate__fadeOutLeft ${classes.active}` : 'animate__animated animate__fadeInLeft'} ${currentState == true ? classes.navmenu : classes.active}`}>
-            <nav>
+            <nav className="max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
                 <ul>
-                    <li className={currentState == true ? 'animate__animated animate__fadeOutDown' : "animate__delay-1s animate__animated animate__fadeInUp"}>
-                        <Link href='/'>Home</Link>
+                    <li className={`max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate__animated animate__fadeOutDown' : "animate__delay-1s animate__animated animate__fadeInUp"}`}>
+                        <Link className="text-6xl uppercase" href='/'>Home</Link>
                     </li>
-                    <li className={currentState == true ? 'animate__animated animate__fadeOutDown' : "animate__delay-1s animate__animated animate__fadeInUp"}>
-                        <Link href='/projects'>Projects</Link>
+                    <li className={`max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate__animated animate__fadeOutDown' : "animate__delay-1s animate__animated animate__fadeInUp"}`}>
+                        <Link className="text-6xl uppercase " href='/projects'>Projects</Link>
                     </li>
-                    <li className={currentState == true ? 'animate__animated animate__fadeOutDown' : "animate__delay-1s animate__animated animate__fadeInUp"}>
-                        <Link href='/blog'>Blog</Link>
+                    <li className={`max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate__animated animate__fadeOutDown' : "animate__delay-1s animate__animated animate__fadeInUp"}`}>
+                        <Link className="text-6xl uppercase" href='/blog'>Blog</Link>
                     </li>
                 </ul>
             </nav>

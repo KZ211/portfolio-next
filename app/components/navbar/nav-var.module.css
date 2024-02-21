@@ -15,7 +15,7 @@
 
 .active{
     z-index: -1;
-    background-color: blue;
+    background-color: white;
     perspective-origin: 0%;
     transform-origin: 0%;
     justify-content: center;

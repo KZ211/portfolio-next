@@ -15,6 +15,9 @@ module.exports = {
       'exo-2': ['"Exo 2"', 'sans-serif'],
     },
     extend: {
+      fontFamily: {
+        'monserrat': ['Montserrat', 'sans-serif']
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
