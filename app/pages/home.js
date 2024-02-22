@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function HomePage(){
     return <div className='font-monserrat py-10 px-2 grid grid-rows-5 grid-cols-1 zIndex
                             sm:grid-rows-3 sm:grid-cols-3'>
-    <div className="sm:row-start-1 sm:row-end-3 col-start-1">
         <div className="self-end grid-row-span-1 
                         sm:self-start">
         <div className="container overflow-hidden">
@@ -16,9 +15,8 @@ export default function HomePage(){
             <h1 className="text-5xl font-bold uppercase my-0">Jares</h1>
         </div>
         </div>
-    </div>
     <div className="self-start grid-row-span-1
-                    row-start-4 row-end-5 col-start-2 col-end-2">
+                    sm:row-start-4 sm:row-end-5 sm:col-start-2 sm:col-end-2">
       <div className="container text-md max-w-lg">
         <p className="uppercase font-thin">I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.
 </p>
