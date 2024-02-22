@@ -18,7 +18,7 @@ export default function NavBar(){
     }
 
     const logoImage = 'https://drive.google.com/uc?id=1_RReY9xp2cq_fpJQHTTafZNow3cNIqWQ';
-    return <div className=" h-12 bg-white font-monserrat pt-0 px-5 top-0 bottom-auto left-0 right-0 relative z-10">
+    return <div className=" h-12 bg-white font-monserrat pt-0 px-5 top-0 bottom-auto left-0 right-0 fixed z-10">
         <div className="max-w-6xl flex justify-between items-end mx-auto">
             <div className="inline-block max-w-full">
                 <Link className="max-w-full inline-block" href="/">
@@ -32,10 +32,13 @@ export default function NavBar(){
             </div>
         </div>
         <div className={`${inicializated == true ? `${currentState == true ? ` animate-fadeOutLeft ${classes.active}` : 'animate-fadeInLeft'} ${currentState == true ? classes.navmenu : classes.active}` : 'hidden'}`}>
-            <nav className="max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
-                <ul>
+            <nav className=" w-80 max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
+                <ul className=" w-full h-full">
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
                         <Link className="text-6xl uppercase" href='/'>Home</Link>
+                    </li>
+                    <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
+                        <Link className="text-6xl uppercase" href='/'>About</Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
                         <Link className="text-6xl uppercase " href='/projects'>Projects</Link>

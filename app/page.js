@@ -1,3 +1,4 @@
+import AboutPage from "./pages/about";
 import HomePage from "./pages/home";
 import ProjectsPage from "./pages/projects";
 
@@ -10,6 +11,7 @@ export const metadata = {
 export default function Home() {
   return <>
     <HomePage/>
+    <AboutPage/>
     <ProjectsPage/>
   </>
 }
