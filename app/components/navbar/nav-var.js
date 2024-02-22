@@ -17,12 +17,13 @@ export default function NavBar(){
         console.log(currentState);
     }
 
-    const logoImage = 'https://drive.google.com/uc?id=1_RReY9xp2cq_fpJQHTTafZNow3cNIqWQ';
-    return <div className=" h-12 bg-white font-monserrat pt-0 px-5 top-0 bottom-auto left-0 right-0 fixed z-10">
+    const logoImage = 'https://drive.google.com/uc?id=1g3ot02zXMVfMjjtQbQBiuT9RBpmTRT5u';
+    return <div className="h-12 bg-white pt-0 px-5 top-0 bottom-auto left-0 right-0 fixed z-10">
         <div className="max-w-6xl flex justify-between items-end mx-auto">
             <div className="inline-block max-w-full">
                 <Link className="max-w-full inline-block" href="/">
-                    <Image className="max-w-full align-middle inline-block" src={logoImage} alt='Logo' width={39} height={7} priority/>
+                    <Image className="max-w-full align-middle inline-block mt-2" 
+                    src={logoImage} alt='Logo' width={45} height={20} priority/>
                 </Link>
             </div>
             <div className="cursor-pointer block mt-5" onClick={changeHandler}>

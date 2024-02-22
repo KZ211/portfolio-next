@@ -12,12 +12,11 @@ module.exports = {
       'mono': ['ui-monospace', 'SFMono-Regular', ],
       'display': ['Oswald', ],
       'body': ['"Open Sans"', ],
-      'exo-2': ['"Exo 2"', 'sans-serif'],
+      'montserrat': ["Montserrat", 'sans-serif'],
     },
     extend: {
       fontFamily: {
-        'monserrat': ['Montserrat', 'sans-serif'],
-        'bebas' : ['Bebas Neue', 'sans-serif']
+        'monserrat': ["Montserrat", 'sans-serif'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -93,7 +92,9 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
   corePlugins: {
     transition: true,
   },
