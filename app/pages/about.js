@@ -9,7 +9,7 @@ export default function AboutPage(){
         </div>
         <div className="mt-5 self-start grid-row-span-1 ">
         <div className="container overflow-hidden">
-            <p className="text-sm text-gray-500 my-0">I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
+            <p className="text-md text-gray-500 my-0">I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
         </div>
         </div>
         <div className="mt-5 self-start grid-row-span-1 ">
