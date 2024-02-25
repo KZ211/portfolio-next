@@ -6,16 +6,15 @@ import { RxVercelLogo } from "react-icons/rx";
 export default function ProjectsPage(){
     return <>
         <header>
-            <main className="grid grid-cols-1 grid-rows-[100px_1000px_1000px_1000px] font-montserrat
-                            md:grid-rows-[100px_600px_600px_600px] md:py-10 md:justify-items-center md:px-2">
+            <main className=" md:py-10 md:px-2 grid grid-cols-1 grid-rows-[100px_600px_600px_600px] font-montserrat justify-items-center">
                 <header className="container mx-auto row-start-1 row-end-1
                                     md:mx-0">
                     <h1 className="font-montserrat font-bold uppercase text-md">Projects</h1>
                 </header>
-                <article className="container row-start-2 row-end-2 mb-32
-                                    md:justify-center md:items-center md:justify-self-start md:w-full md:h-full">
+                <article className="container row-start-2 row-end-2 mb-32 justify-self-start
+                                    md:justify-center md:items-center">
                     <div className="md:block">
-                        <div className="md:flex md:w-full md:justify-center flex-wrap">
+                        <div className="md:flex md:justify-center flex-wrap">
                             <div className="md:flex md:flex-nowrap">
                                 <Image className="md:w-96 md:h-96" src='https://assets-global.website-files.com/65bf99434e8a00ec776f7cdc/65bf9afc13cac7610082a84e_rodion-kutsaiev-6W8H4puOJB0-unsplash.jpg' width={1920} height={1536} alt=''/>
                                 <div className="border-b-[1px] border-black mb-10 mx-[5%]
@@ -50,8 +49,8 @@ export default function ProjectsPage(){
                         </div>
                     </div>
                 </article>
-                <article className="container justify-end row-start-3 row-end-3 mb-32 
-                                    md:justify-center md:items-center md:justify-self-end md:w-full md:h-full">
+                <article className="container justify-end row-start-3 row-end-3 mb-32 justify-self-end
+                                    md:justify-center md:items-center md:w-full md:h-full">
                     <div className="md:block">
                         <div className="md:flex md:w-full md:flex-row-reverse">
                         <Image className="
@@ -89,8 +88,8 @@ export default function ProjectsPage(){
                             </div>
                     </div>
                 </article>
-                <article className="container row-start-4 row-end-4 mb-32 
-                                    md:justify-center md:items-center md:justify-self-start">
+                <article className="container row-start-4 row-end-4 mb-32 justify-self-start
+                                    md:justify-center md:items-center">
                     <div className="md:block">
                         <div className="md:flex md:justify-center flex-wrap">
                             <div className="md:flex md:flex-nowrap">
