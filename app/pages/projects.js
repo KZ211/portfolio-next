@@ -6,8 +6,8 @@ import { RxVercelLogo } from "react-icons/rx";
 export default function ProjectsPage(){
     return <>
         <header>
-            <main className="grid grid-cols-1 grid-rows-[100px_1000px_1000px_1000px] font-montserrat
-                            md:grid-rows-[100px_600px_600px_600px] md:py-10 md:justify-items-center md:px-2">
+            <main className="grid grid-cols-1 grid-rows-[100px_800px_800px_800px] font-montserrat justify-items-center
+                            md:grid-rows-[100px_600px_600px_600px] md:py-10 md:px-2">
                 <header className="container mx-auto row-start-1 row-end-1
                                     md:mx-0">
                     <h1 className="font-montserrat font-bold uppercase text-md">Projects</h1>
