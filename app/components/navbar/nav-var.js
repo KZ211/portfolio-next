@@ -33,19 +33,31 @@ export default function NavBar(){
             </div>
         </div>
         <div className={`${inicializated == true ? `${currentState == true ? ` animate-fadeOutLeft ${classes.active}` : 'animate-fadeInLeft'} ${currentState == true ? classes.navmenu : classes.active}` : 'hidden'}`}>
-            <nav className=" w-80 max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
-                <ul className=" w-full h-full">
-                    <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link className="text-6xl uppercase" href='/'>Home</Link>
+            <nav className=" w-[380px] max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
+                <ul className=" w-full h-full font-montserrat font-bold">
+                    <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText hover:border-{}-2 border-black"}` : ''}`}>
+                        <Link className="flex flex-wrap justify-center uppercase group text-6xl sm:text-7xl" href='/'>
+                            Home
+                            <span className="bg-black h-[1px] w-[232px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
+                        </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link className="text-6xl uppercase" href='/'>About</Link>
+                        <Link className="flex flex-wrap justify-center uppercase group text-6xl sm:text-7xl" href='/'>
+                            About
+                            <span className="bg-black h-[1px] w-[270px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
+                        </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link className="text-6xl uppercase " href='/projects'>Projects</Link>
+                        <Link className="flex flex-wrap justify-center uppercase group text-6xl sm:text-7xl" href='/projects'>
+                            Projects
+                            <span className="bg-black h-[1px] w-[370px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
+                        </Link>
                     </li>
-                    <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link className="text-6xl uppercase" href='/blog'>Blog</Link>
+                    <li className={`${inicializated == true ? `max-w-[189,72px] inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
+                        <Link className="flex flex-wrap justify-center uppercase group text-6xl sm:text-7xl" href='/'>
+                            Blog
+                            <span className="bg-black h-[1px] w-[200px] -translate-x-80 group-hover:translate-x-0 transition-all ease duration-200"/>
+                        </Link>
                     </li>
                 </ul>
             </nav>

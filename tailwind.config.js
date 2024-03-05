@@ -77,6 +77,11 @@ module.exports = {
             transform: 'translate3d(-100%, 0, 0)',
           },
         },
+        showLine: {
+          '0%': { transform: 'translateX(0px)' },
+          '50%': { transform: 'translateX(0px)' },
+          '100%': { transform: 'translateX(64px)' },
+        },
       },
       animation: {
         mergeAndRotateTop: 'mergeAndRotateTop 0.4s ease-in-out forwards',
@@ -89,6 +94,7 @@ module.exports = {
         showText: 'showText 1s ease-in-out forwards',
         fadeInLeft: 'fadeInLeft 0.5s ease-out',
         fadeOutLeft: 'fadeOutLeft 1s ease-out forwards 0.5s',
+        showLine: 'showLine 1s ease-out forwards 0.5s'
       }
     },
   },

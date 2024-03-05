@@ -49,7 +49,7 @@ export default function HomePage(){
     
       <div className="row-start-5 row-end-5 container text-md max-w-sm flex flex-wrap content-center justify-center
                       ">
-        <Image src='https://drive.google.com/uc?id=1X0TFJ_BVjrxGbVa75jp4Sayp8jDkZfJ_' width={1000} height={1000}/>
+        <Image src='https://drive.google.com/uc?id=1X0TFJ_BVjrxGbVa75jp4Sayp8jDkZfJ_' width={1000} height={1000} alt="Alexis sosteniendo un fibron frente a un pizzarron explicando algo a sus 3 compañeros"/>
       </div>
     </div>
   </div>

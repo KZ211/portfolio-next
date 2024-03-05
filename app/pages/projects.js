@@ -50,7 +50,7 @@ export default function ProjectsPage(){
                         </div>
                     </div>
                 </article>
-                <article className="container justify-end row-start-3 row-end-3 mb-32 
+                <article className="container justify-end row-start-3 row-end-3 mb-32 mt-10
                                     md:justify-center md:items-center md:justify-self-end md:w-full md:h-full">
                     <div className="md:block">
                         <div className="md:flex md:w-full md:flex-row-reverse">
@@ -89,7 +89,7 @@ export default function ProjectsPage(){
                             </div>
                     </div>
                 </article>
-                <article className="container row-start-4 row-end-4 mb-32 
+                <article className="container row-start-4 row-end-4 mb-32 mt-20
                                     md:justify-center md:items-center md:justify-self-start">
                     <div className="md:block">
                         <div className="md:flex md:justify-center flex-wrap">
