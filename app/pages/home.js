@@ -14,7 +14,8 @@ export default function HomePage(){
                             sm:text-[100px]
                             md:text-[98px] md:mr-4
                             lg:text-[130px] lg:font-[600]
-                            xl:text-[152px]">Alexis</h1>
+                            xl:text-[152px]
+                            2xl:text-[185px]">Alexis</h1>
         </div>
         </div>
         <div className="self-start grid-row-span-1 
@@ -27,7 +28,8 @@ export default function HomePage(){
                             sm:text-[100px]
                             md:text-[98px] md:ml-4
                             lg:text-[130px] lg:font-[600]
-                            xl:text-[152px]">Jares</h1>
+                            xl:text-[152px]
+                            2xl:text-[185px]">Jares</h1>
         </div>
         </div>
     <div className="self-start grid-row-span-1 row-start-3 row-end-3 

@@ -10,7 +10,7 @@ export default function ProjectsPage(){
                             md:grid-rows-[100px_600px_600px_600px] md:py-10 md:px-2">
                 <header className="container mx-auto row-start-1 row-end-1
                                     md:mx-0">
-                    <h1 className="font-montserrat font-bold uppercase text-md">Projects</h1>
+                    <h1 className="font-montserrat font-medium uppercase text-md">Projects</h1>
                 </header>
                 <article className="container row-start-2 row-end-2 mb-32
                                     md:justify-center md:items-center md:justify-self-start md:w-full md:h-full">
