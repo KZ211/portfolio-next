@@ -14,7 +14,6 @@ export default function NavBar(){
     function changeHandler(event){
         currentState == true ? setCurrentState(false):setCurrentState(true);
         setInicializated(true);
-        console.log(currentState);
     }
 
     const logoImage = 'https://drive.google.com/uc?id=1g3ot02zXMVfMjjtQbQBiuT9RBpmTRT5u';
@@ -34,7 +33,7 @@ export default function NavBar(){
         </div>
         <div className={`${inicializated == true ? `${currentState == true ? ` animate-fadeOutLeft ${classes.active}` : 'animate-fadeInLeft'} ${currentState == true ? classes.navmenu : classes.active}` : 'hidden'}`}>
             <nav className=" w-[380px] max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
-                <ul className=" w-full h-full font-montserrat font-bold">
+                <ul className=" w-full h-full font-montserrat font-[600]">
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText hover:border-{}-2 border-black"}` : ''}`}>
                         <Link className="flex flex-wrap justify-center uppercase group text-6xl sm:text-7xl" href='/'>
                             Home
