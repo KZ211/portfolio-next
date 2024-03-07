@@ -1,8 +1,9 @@
 'use client';
 
 import Image from "next/image";
-import Link from "next/link";
+//import Link from "next/link";
 import { useState } from "react";
+import {Link} from 'react-scroll';
 
 import classes from './nav-var.module.css';
 import 'animate.css';
@@ -20,7 +21,7 @@ export default function NavBar(){
     return <div className="h-12 bg-white pt-0 px-5 top-0 bottom-auto left-0 right-0 fixed z-10">
         <div className="max-w-7xl flex justify-between items-end mx-auto">
             <div className="inline-block max-w-full">
-                <Link className="max-w-full inline-block" href="/">
+                <Link to='home' smooth duration={500} className="max-w-full inline-block cursor-pointer">
                     <Image className="max-w-full align-middle inline-block mt-2 w-auto h-auto" 
                     src={logoImage} alt='Logo' width={45} height={20} priority/>
                 </Link>
@@ -35,25 +36,25 @@ export default function NavBar(){
             <nav className=" w-[380px] max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
                 <ul className=" w-full h-full font-montserrat font-[400]">
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText hover:border-{}-2 border-black"}` : ''}`}>
-                        <Link onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl" href='/#home'>
+                        <Link to='home' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl cursor-pointer">
                             Home
                             <span className="bg-black h-[1px] w-[232px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl" href='/#about'>
+                        <Link to='about' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl cursor-pointer">
                             About
                             <span className="bg-black h-[1px] w-[270px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl" href='/#projects'>
+                        <Link to='projects' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl cursor-pointer">
                             Projects
                             <span className="bg-black h-[1px] w-[370px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-[189,72px] inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl" href='/'>
+                        <Link to='blog' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl cursor-pointer">
                             Blog
                             <span className="bg-black h-[1px] w-[200px] -translate-x-80 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>

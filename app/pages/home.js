@@ -1,8 +1,35 @@
+import React, { useEffect, useState } from 'react';
+import {Element} from 'react-scroll';
 import Image from "next/image";
 import 'animate.css';
 
 export default function HomePage(){
-    return <div id="home" className='font-monserrat py-10 px-2 grid grid-rows-5 grid-cols-1 zIndex
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calcula la posición del scroll
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+      // Define el umbral de visibilidad (ajústalo según sea necesario)
+      const threshold = 300;
+
+      // Activa la visibilidad cuando el usuario ha hecho scroll más allá del umbral
+      setIsVisible(scrollY > threshold);
+    };
+
+    // Agrega un evento de escucha al scroll
+    window.addEventListener('scroll', handleScroll);
+
+    // Limpia el evento de escucha al desmontar el componente
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return <Element name='home' id='home'>
+    <div className='font-monserrat py-10 px-2 grid grid-rows-5 grid-cols-1 zIndex
                             md:grid-rows-[200px_200px_50px] md:grid-cols-2 md:pt-20 md:pb-10 md:mx-20'>
         
         <div className="self-end grid-row-span-1
@@ -11,7 +38,7 @@ export default function HomePage(){
         <div className="container overflow-hidden min-w-full
                         md:flex md:justify-end">
         
-            <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 
+            <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 select-none
                             sm:text-[100px]
                             md:text-[98px] md:mr-4
                             lg:text-[130px] lg:font-[600]
@@ -25,7 +52,7 @@ export default function HomePage(){
         <div className="container overflow-hidden
                         md:flex md:justify-start">
         
-            <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100
+            <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 select-none
                             sm:text-[100px]
                             md:text-[98px] md:ml-4
                             lg:text-[130px] lg:font-[600]
@@ -65,4 +92,5 @@ export default function HomePage(){
       </div>
     </div>
   </div>
+  </Element>
 }

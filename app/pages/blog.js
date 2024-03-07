@@ -1,5 +1,7 @@
+import {Element} from 'react-scroll';
+
 export default function BlogPage(){
-    return <h1>
+    return <Element name='blog' id='blog'>
         Blog
-    </h1>
+    </Element>
 }
