@@ -18,10 +18,10 @@ export default function NavBar(){
 
     const logoImage = 'https://drive.google.com/uc?id=1g3ot02zXMVfMjjtQbQBiuT9RBpmTRT5u';
     return <div className="h-12 bg-white pt-0 px-5 top-0 bottom-auto left-0 right-0 fixed z-10">
-        <div className="max-w-6xl flex justify-between items-end mx-auto">
+        <div className="max-w-7xl flex justify-between items-end mx-auto">
             <div className="inline-block max-w-full">
                 <Link className="max-w-full inline-block" href="/">
-                    <Image className="max-w-full align-middle inline-block mt-2" 
+                    <Image className="max-w-full align-middle inline-block mt-2 w-auto h-auto" 
                     src={logoImage} alt='Logo' width={45} height={20} priority/>
                 </Link>
             </div>
@@ -35,25 +35,25 @@ export default function NavBar(){
             <nav className=" w-[380px] max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
                 <ul className=" w-full h-full font-montserrat font-[400]">
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText hover:border-{}-2 border-black"}` : ''}`}>
-                        <Link className="flex flex-wrap justify-center uppercase group text-6xl sm:text-7xl" href='/'>
+                        <Link onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl" href='/#home'>
                             Home
                             <span className="bg-black h-[1px] w-[232px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link className="flex flex-wrap justify-center uppercase group text-6xl sm:text-7xl" href='/'>
+                        <Link onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl" href='/#about'>
                             About
                             <span className="bg-black h-[1px] w-[270px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link className="flex flex-wrap justify-center uppercase group text-6xl sm:text-7xl" href='/projects'>
+                        <Link onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl" href='/#projects'>
                             Projects
                             <span className="bg-black h-[1px] w-[370px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-[189,72px] inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link className="flex flex-wrap justify-center uppercase group text-6xl sm:text-7xl" href='/'>
+                        <Link onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl" href='/'>
                             Blog
                             <span className="bg-black h-[1px] w-[200px] -translate-x-80 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
