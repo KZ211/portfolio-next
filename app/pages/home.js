@@ -29,8 +29,8 @@ export default function HomePage(){
   }, []);
 
   return <Element name='home' id='home'>
-    <div className='font-monserrat py-10 px-2 grid grid-rows-5 grid-cols-1 zIndex
-                            md:grid-rows-[200px_200px_50px] md:grid-cols-2 md:pt-20 md:pb-10 md:mx-20'>
+    <div className='font-monserrat py-10 grid grid-rows-5 grid-cols-1 zIndex
+                            md:grid-rows-[200px_200px_50px] md:grid-cols-2 md:pt-20 md:pb-10 md:mx-[10%]'>
         
         <div className="self-end grid-row-span-1
                         md:flex md:content-center md:flex-wrap md:w-full md:h-full">

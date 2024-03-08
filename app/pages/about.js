@@ -9,24 +9,19 @@ export default function AboutPage(){
 
   useEffect(() => {
     const handleScroll = () => {
-      // Calcula la posición del scroll
       const scrollY = window.scrollY || document.documentElement.scrollTop;
 
-      // Define el umbral de visibilidad (ajústalo según sea necesario)
       const threshold = 100;
       const threshold1 = 200;
       const threshold2 = 300;
 
-      // Activa la visibilidad cuando el usuario ha hecho scroll más allá del umbral
       setIsVisible(scrollY > threshold);
       setIsVisible1(scrollY > threshold1);
       setIsVisible2(scrollY > threshold2);
     };
 
-    // Agrega un evento de escucha al scroll
     window.addEventListener('scroll', handleScroll);
 
-    // Limpia el evento de escucha al desmontar el componente
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -34,7 +29,7 @@ export default function AboutPage(){
 
     return <Element name='about' id='about'>  
     <div id='about' className="mx-2
-                    md:flex md:mx-20">
+                               md:flex md:mx-[10%]">
     <div className='font-monserrat py-10 ml-2 grid grid-rows-4 grid-cols-1 zIndex
                     md:grid-cols-2 md:grid-rows-3'>
         <div className="mt-5 self-center grid-row-span-1 row-start-1 row-end-1">

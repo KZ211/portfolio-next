@@ -18,8 +18,8 @@ export default function NavBar(){
     }
 
     const logoImage = 'https://drive.google.com/uc?id=1g3ot02zXMVfMjjtQbQBiuT9RBpmTRT5u';
-    return <div className="h-12 bg-white pt-0 px-5 top-0 bottom-auto left-0 right-0 fixed z-10">
-        <div className="max-w-7xl flex justify-between items-end mx-auto">
+    return <div className="mx-[10%] h-12 bg-gray-50 pt-0 top-0 bottom-auto left-0 right-0 fixed z-10">
+        <div className="flex justify-between items-center">
             <div className="inline-block max-w-full">
                 <Link to='home' smooth duration={500} className="max-w-full inline-block cursor-pointer">
                     <Image className="max-w-full align-middle inline-block mt-2 w-auto h-auto" 
