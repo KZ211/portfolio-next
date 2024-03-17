@@ -37,25 +37,25 @@ export default function NavBar(){
             <nav className=" w-[380px] max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
                 <ul className=" w-full h-full font-montserrat font-[400]">
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText hover:border-{}-2 border-black"}` : ''}`}>
-                        <Link to='home' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl cursor-pointer">
+                        <Link to='home' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[327px]:text-6xl min-[396px]:text-7xl cursor-pointer">
                             Home
                             <span className="bg-black h-[1px] w-[232px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link to='about' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl cursor-pointer">
+                        <Link to='about' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[327px]:text-6xl min-[396px]:text-7xl cursor-pointer">
                             About
                             <span className="bg-black h-[1px] w-[270px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link to='projects' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl cursor-pointer">
+                        <Link to='projects' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[327px]:text-6xl min-[396px]:text-7xl cursor-pointer">
                             Projects
                             <span className="bg-black h-[1px] w-[370px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
                     <li className={`${inicializated == true ? `max-w-[189,72px] inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link to='blog' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-7xl cursor-pointer">
+                        <Link to='blog' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[396px]:text-7xl cursor-pointer">
                             Blog
                             <span className="bg-black h-[1px] w-[200px] -translate-x-80 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>

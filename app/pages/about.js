@@ -30,7 +30,8 @@ export default function AboutPage(){
     return <Element name='about' id='about'>  
     <div id='about' className="mx-2 max-w-[90rem]
                                min-[894px]:flex md:mx-[10%]">
-    <div className='font-monserrat pb-10 grid grid-rows-[100px_200px_300px_300px] grid-cols-1 zIndex
+    <div className='font-monserrat pb-10 grid grid-rows-[100px_250px_380px_380px] grid-cols-1 zIndex
+                    min-[425px]:grid-rows-[100px_200px_300px_300px]
                     min-[894px]:grid-cols-2 min-[894px]:grid-rows-3'>
         <div className="mt-5 self-center grid-row-span-1 row-start-1 row-end-1">
         <div className="container overflow-hidden">
