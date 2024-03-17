@@ -45,7 +45,7 @@ export default function ProjectsPage(){
     return <Element name='projects' id='projects'>
         <header className="mx-2
                            md:mx-[10%]">
-            <main className="grid grid-cols-1 grid-rows-[150px_1000px_1000px_800px] font-montserrat justify-items-center
+            <main className="grid grid-cols-1 grid-rows-[150px_1000px_1000px_1000px] font-montserrat justify-items-center
                             min-[894px]:grid-rows-[100px_600px_600px_380px] min-[894px]:py-10">
                 <header className="container row-start-1 row-end-1
                                     min-[894px]:mx-0 min-[894px]:justify-self-start">
