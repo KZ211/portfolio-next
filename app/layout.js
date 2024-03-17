@@ -8,11 +8,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-        <body className="bg-gray-50">
-          <NavBar/>
-          {children}
-        </body>
-    </html>
+      <html lang="en">
+          <body className="bg-gray-50 ::-webkit-scrollbar ::-webkit-scrollbar-track ::-webkit-scrollbar-thumb .scrollbar-track .scrollbar-thumb">
+            <NavBar/>
+            {children}
+          </body>
+      </html>
   );
 }

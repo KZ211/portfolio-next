@@ -29,45 +29,61 @@ export default function HomePage(){
   }, []);
 
   return <Element name='home' id='home'>
-    <div className='font-monserrat py-10 grid grid-rows-5 grid-cols-1 zIndex
-                            md:grid-rows-[200px_200px_50px] md:grid-cols-2 md:pt-20 md:pb-10 md:mx-[10%]'>
+    <div className='font-monserrat pt-10 grid zIndex max-w-[90rem]
+                            grid-rows-[120px_120px_200px_140px_180px] grid-cols-1 mx-2
+                            md:grid-rows-[100px_180px_30px] md:grid-cols-2 md:pt-20 md:mx-[10%]
+                            lg:grid-rows-[130px_250px_30px]
+                            xl:grid-rows-[150px_260px_30px]
+                            2xl:grid-rows-[200px_300px_30px]
+                            '>
         
         <div className="self-end grid-row-span-1
                         md:flex md:content-center md:flex-wrap md:w-full md:h-full">
         
         <div className="container overflow-hidden min-w-full
-                        md:flex md:justify-end">
+                        md:flex md:justify-start">
         
             <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 select-none
                             sm:text-[100px]
-                            md:text-[98px] md:mr-4
-                            lg:text-[130px] lg:font-[600]
-                            xl:text-[152px]
-                            2xl:text-[185px]">Alexis</h1>
+                            md:text-[80px] md:mr-4
+                            min-[901px]:text-[90px]
+                            lg:text-[100px] lg:font-[600]
+                            min-[1086px]:text-[110px]
+                            min-[1174px]:text-[130px]
+                            xl:text-[125px] xl:tracking-widest
+                            min-[1574px]:text-[145px]
+                            2xl:text-[150px] 
+                            min-[1770px]:text-[170px]">Alexis</h1>
         </div>
         </div>
         <div className="self-start grid-row-span-1 
                         md:flex md:content-center md:flex-wrap md:w-full md:h-full">
         
         <div className="container overflow-hidden
-                        md:flex md:justify-start">
+                        md:flex md:justify-end">
         
             <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 select-none
                             sm:text-[100px]
-                            md:text-[98px] md:ml-4
-                            lg:text-[130px] lg:font-[600]
-                            xl:text-[152px]
-                            2xl:text-[185px]">Jares</h1>
+                            md:text-[80px] md:ml-4
+                            min-[901px]:text-[90px]
+                            lg:text-[100px] lg:font-[600]
+                            min-[1086px]:text-[110px]
+                            min-[1174px]:text-[130px]
+                            xl:text-[125px] xl:tracking-widest
+                            min-[1574px]:text-[145px]
+                            2xl:text-[150px] 
+                            min-[1770px]:text-[170px]">Jares</h1>
         </div>
         </div>
     <div className="self-start grid-row-span-1 row-start-3 row-end-3 
                     
                     md:row-start-2 md:row-end-2 md:col-start-2 md:col-end-2
-                    md:flex md:justify-start md:content-center md:flex-wrap md:w-full md:h-full">
+                    md:flex md:justify-end md:content-center md:flex-wrap md:w-full md:h-full">
       
-      <div className="container text-md max-w-lg animate__animated animate__fadeIn animate__delay-2s
+      <div className="container row-start-3 row-end-3 col-start-2 col-end-2 text-md max-w-lg animate__animated animate__fadeIn animate__delay-2s
                       sm:text-xl sm:max-w-2xl
-                      md:flex md:content-center md:text-md md:ml-3 md:max-w-lg">
+                      md:flex md:content-center md:text-base md:ml-3
+                      lg:text-xl">
       
         <p className="uppercase font-[400]">I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
       </div>
@@ -81,14 +97,17 @@ export default function HomePage(){
       </div>
     </div>
     <div className="grid-row-span-1
-                    sm:justify-self-center
+                    sm:justify-self-start
                     md:row-start-2 md:row-end-2">
     
-      <div className="row-start-5 row-end-5 container
-                      sm">
+      <div className="row-start-2 row-end-2 col-span-2 container w-full h-full inline
+                      ">
         <Image className="animate-showText transition-all ease duration-300 delay-100
                           sm:w-[700px] sm:h-[300px]
-                          md:w-[510px] md:h-[200px]" src='https://drive.google.com/uc?id=1X0TFJ_BVjrxGbVa75jp4Sayp8jDkZfJ_' width={1000} height={200} alt="Alexis sosteniendo un fibron frente a un pizzarron explicando algo a sus 3 compañeros"/>
+                          md:h-[180px] md:w-full
+                          lg:h-[245px]
+                          xl:h-[260px]
+                          2xl:h-[300px]" src='https://drive.google.com/uc?id=1X0TFJ_BVjrxGbVa75jp4Sayp8jDkZfJ_' width={1000} height={200} alt="Alexis sosteniendo un fibron frente a un pizzarron explicando algo a sus 3 compañeros"/>
       </div>
     </div>
   </div>

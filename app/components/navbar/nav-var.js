@@ -18,7 +18,8 @@ export default function NavBar(){
     }
 
     const logoImage = 'https://drive.google.com/uc?id=1g3ot02zXMVfMjjtQbQBiuT9RBpmTRT5u';
-    return <div className="mx-[10%] h-12 bg-gray-50 pt-0 top-0 bottom-auto left-0 right-0 fixed z-10">
+    return <div className="mx-2 h-12 bg-gray-50 pt-0 top-0 bottom-auto left-0 right-0 fixed z-10 max-w-[90rem] border-b-2
+                           md:mx-[10%]">
         <div className="flex justify-between items-center">
             <div className="inline-block max-w-full">
                 <Link to='home' smooth duration={500} className="max-w-full inline-block cursor-pointer">
@@ -26,7 +27,7 @@ export default function NavBar(){
                     src={logoImage} alt='Logo' width={45} height={20} priority/>
                 </Link>
             </div>
-            <div className="cursor-pointer block mt-5" onClick={changeHandler}>
+            <div className="cursor-pointer block mt-5 mr-3" onClick={changeHandler}>
                     <div className={`${inicializated == true ? `w-10 h-px mb-1 bg-black transition-transform ease-in-out duration-300 ${currentState ? 'rotate-45 translate-y-1 animate-mergeAndRotateTopOut' : 'animate-mergeAndRotateTop'}` : 'w-10 h-px mb-1 bg-black'}`}/>
                     <div className={`${inicializated == true ? `w-10 h-px mb-1 bg-black transition-transform ease-in-out duration-300 ${currentState ? 'rotate-45 animate-mergeAndRotateMidOut' : 'animate-mergeAndRotateMid'}` : 'w-10 h-px mb-1 bg-black'}`}/>
                     <div className={`${inicializated == true ? `w-10 h-px mb-1 bg-black transition-transform ease-in-out duration-300 ${currentState ? '-rotate-45 -translate-y-1 animate-mergeAndRotateBottomOut' : 'animate-mergeAndRotateBottom'}` : 'w-10 h-px mb-1 bg-black'}`}/>
