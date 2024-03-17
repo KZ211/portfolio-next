@@ -38,17 +38,17 @@ export default function BlogPage(){
         </div>
         </div>
       <div className='flex flex-row scroll-container overflow-x-auto snap-x'>
-        <div className='card-container whitespace-nowrap snap-start'>
-          <Card titulo='universidad' subTitulo='Comienzo de clases' texto='Estoy comenzando la cursada de mi segundo cuatrimestre en la universidad de 3 de febrero.' texto2='Me inscribi a 1 materia para tener mayor disponibilidad para trabajar en mi perfil profesional como programador.'/>
+        <div className='whitespace-nowrap snap-center'>
+          <Card titulo='University' subTitulo='Start of classes' texto='I&apos;m starting my second semester at the University of 3 de Febrero.' texto2='I enrolled in one course to have more availability to work on my professional profile as a programmer.'/>
         </div>
-        <div className='card-container whitespace-nowrap snap-start'>
-          <Card titulo='Progreso continuo' subTitulo='Aprendiendo algo nuevo' texto='Estoy comenzando la cursada de mi segundo cuatrimestre en la universidad de 3 de febrero.' texto2='Me inscribi a 1 materia para tener mayor disponibilidad para trabajar en mi perfil profesional como programador.'/>
+        <div className='whitespace-nowrap snap-center'>
+          <Card titulo='Programming' subTitulo='New Project' texto='Since experience is very important, I continue to create projects to challenge my knowledge.' texto2='With these projects, my professional development grows alongside my ability to solve problems.'/>
         </div>
-        <div className='card-container whitespace-nowrap snap-start'>
-          <Card titulo='programing' subTitulo='Nuevo projecto' texto='Estoy comenzando la cursada de mi segundo cuatrimestre en la universidad de 3 de febrero.' texto2='Me inscribi a 1 materia para tener mayor disponibilidad para trabajar en mi perfil profesional como programador.'/>
+        <div className='whitespace-nowrap snap-center'>
+          <Card titulo='Permanence' subTitulo='Learning something new' texto='I recently finished a course on React.js and Next.js in which we worked on a project.' texto2='In the project, I overcame challenges and goals set by Professor Maximilian Schwarzmüller.'/>
         </div>
-        <div className='card-container whitespace-nowrap snap-start'>
-          <Card titulo='programing' subTitulo='Nuevo projecto' texto='Estoy comenzando la cursada de mi segundo cuatrimestre en la universidad de 3 de febrero.' texto2='Me inscribi a 1 materia para tener mayor disponibilidad para trabajar en mi perfil profesional como programador.'/>
+        <div className='whitespace-nowrap snap-center'>
+          <Card titulo='University' subTitulo='Determination' texto='I&apos;m very happy since I&apos;m close to obtaining my diploma in software, granted by UNTREF.' texto2='By passing the remaining 2 subjects at my university, I would be granted the same.'/>
         </div>
       </div>
     </div>
