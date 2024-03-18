@@ -29,7 +29,7 @@ export default function HomePage(){
   }, []);
 
   return <Element name='home' id='home'>
-    <div className='font-monserrat pt-10 grid zIndex max-w-[90rem]
+    <div className='font-monserrat pt-10 grid zIndex max-w-[90rem] bg-[--color1]
                             grid-rows-[120px_120px_200px_140px_180px] grid-cols-1 mx-2
                             md:grid-rows-[100px_180px_30px] md:grid-cols-2 md:pt-20 md:mx-[10%]
                             lg:grid-rows-[130px_250px_30px]
@@ -43,7 +43,7 @@ export default function HomePage(){
         <div className="container overflow-hidden min-w-full
                         md:flex md:justify-start">
         
-            <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 select-none
+            <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 select-none text-[--color2]
                             sm:text-[100px]
                             md:text-[80px] md:mr-4
                             min-[901px]:text-[90px]
@@ -62,7 +62,7 @@ export default function HomePage(){
         <div className="container overflow-hidden
                         md:flex md:justify-end">
         
-            <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 select-none
+            <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 select-none text-[--color2]
                             sm:text-[100px]
                             md:text-[80px] md:ml-4
                             min-[901px]:text-[90px]
@@ -80,20 +80,13 @@ export default function HomePage(){
                     md:row-start-2 md:row-end-2 md:col-start-2 md:col-end-2
                     md:flex md:justify-end md:content-center md:flex-wrap md:w-full md:h-full">
       
-      <div className="container row-start-3 row-end-3 col-start-2 col-end-2 text-md max-w-lg animate__animated animate__fadeIn animate__delay-2s
+      <div className="container flex flex-wrap row-start-3 row-end-3 col-start-2 col-end-2 text-md max-w-lg animate__animated animate__fadeIn animate__delay-2s
                       sm:text-xl sm:max-w-2xl
-                      md:flex md:content-center md:text-base md:ml-3
+                      md:content-center md:text-base md:ml-3
                       lg:text-xl">
       
-        <p className="uppercase font-[400]">I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
-      </div>
-    </div>
-    <div className="grid-row-span-1
-                    md:w-full md:h-full">
-    
-      <div className="container text-md row-start-4 row-end-4 h-full flex items-center justify-start animate__animated animate__fadeIn animate__delay-2s
-                      md:row-start-3 md:row-end-3 md:w-full md:h-full md:flex md:items-center md:justify-center">
-        <p className="uppercase font-[400] underline text-lg"> React Frontend Developer </p>
+        <p className="uppercase font-[400] text-[--color2] mb-10">I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
+        <p className="uppercase font-[400] underline text-lg text-[--color2]"> React Frontend Developer </p>
       </div>
     </div>
     <div className="grid-row-span-1

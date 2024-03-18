@@ -17,14 +17,14 @@ export default function NavBar(){
         setInicializated(true);
     }
 
-    const logoImage = 'https://drive.google.com/uc?id=1g3ot02zXMVfMjjtQbQBiuT9RBpmTRT5u';
-    return <div className="mx-2 h-12 bg-gray-50 pt-0 top-0 bottom-auto left-0 right-0 fixed z-10 max-w-[90rem] border-b-2
+    const logoImage = 'https://drive.google.com/uc?id=1e_QEjOcdA2x94YY09z4wCyEJ3SIvq3Gk';
+    return <div className="mx-2 h-16 bg-[--color1] pt-0 top-0 bottom-auto left-0 right-0 fixed z-10 max-w-[90rem] border-b-2
                            md:mx-[10%]">
         <div className="flex justify-between items-center">
             <div className="inline-block max-w-full">
                 <Link to='home' smooth duration={500} className="max-w-full inline-block cursor-pointer">
-                    <Image className="max-w-full align-middle inline-block mt-2 w-auto h-auto" 
-                    src={logoImage} alt='Logo' width={45} height={20} priority/>
+                    <Image className="max-w-full align-middle inline-block mt-2 w-auto h-auto saturate-150" 
+                    src={logoImage} alt='Logo' width={55} height={30} priority/>
                 </Link>
             </div>
             <div className="cursor-pointer block mt-5 mr-3" onClick={changeHandler}>

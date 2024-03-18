@@ -1,6 +1,6 @@
 export default function Card({titulo, subTitulo, texto, texto2}){
-    return <div className="w-96 h-72 mr-5 max-w-80">
-        <header className="mb-2 border-b-2 border-black">
+    return <div className="w-96 h-72 mr-5 max-w-80 text-[--color1]">
+        <header className="mb-2 border-b-2 border-[--color1]">
             <h1 className="uppercase text-3xl">{titulo}</h1>
             <h3 className="text-xl opacity-20">{subTitulo}</h3>
         </header>

@@ -27,15 +27,15 @@ export default function AboutPage(){
     };
   }, []);
 
-    return <Element name='about' id='about'>  
-    <div id='about' className="mx-2 max-w-[90rem]
+    return <Element name='about' id='about' className='bg-[--color2]'>  
+    <div id='about' className="mx-2 max-w-[90rem] bg-[--color2]
                                min-[894px]:flex md:mx-[10%]">
     <div className='font-monserrat pb-10 grid grid-rows-[100px_250px_380px_380px] grid-cols-1 zIndex
                     min-[425px]:grid-rows-[100px_200px_300px_300px]
                     min-[894px]:grid-cols-2 min-[894px]:grid-rows-3'>
         <div className="mt-5 self-center grid-row-span-1 row-start-1 row-end-1">
         <div className="container overflow-hidden">
-        <h2 className={`font-monserrat text-ms uppercase font-medium my-0 animate-showText transition-all ease duration-300 delay-100 ${
+        <h2 className={`font-monserrat text-ms uppercase font-medium my-0 animate-showText transition-all ease duration-300 delay-100 text-[--color1] ${
             isVisible ? 'animate-showText' : 'opacity-0'
           } transition-all duration-500`}>about</h2>
         </div>
@@ -43,7 +43,7 @@ export default function AboutPage(){
         <div className="mt-5 self-center grid-row-span-1 
                         min-[894px]:row-start-2 min-[894px]:row-end-2">
         <div className="container overflow-hidden">
-            <h3 className={`text-4xl uppercase font-light my-0 animate-showText transition-all ease duration-300 delay-100
+            <h3 className={`text-4xl uppercase font-light my-0 animate-showText transition-all ease duration-300 delay-100 text-[--color1]
                             sm:max-w-2xl
                             min-[894px]:text-5xl min-[894px]:max-w-min-[894px] 
                             lg:max-w-lg
@@ -59,7 +59,7 @@ export default function AboutPage(){
                         min-[894px]:max-w-lg 
                         xl:max-w-[900px] 
                         ">
-            <p className={`text-min-[894px] font-medium my-0 opacity-65 animate__animated animate__fadeIn
+            <p className={`text-min-[894px] font-medium my-0 opacity-65 animate__animated animate__fadeIn text-[--color1]
                           min-[894px]:text-min-[894px]
                           min-[894px]:ml-2 
                           ${isVisible1 ? 'animate__animated animate__fadeInRight' : 'opacity-0'} transition-all duration-500`}
@@ -74,7 +74,7 @@ export default function AboutPage(){
                         lg:max-w-xl 
                         xl:max-w-[900px] 
                          min-[894px]:ml-2">
-            <p className={`text-min-[894px] min-[894px]:text-min-[894px] opacity-65 
+            <p className={`text-min-[894px] min-[894px]:text-min-[894px] opacity-65 text-[--color1]
                             ${isVisible2 ? 'animate__animated animate__fadeInRight' : 'opacity-0'} transition-all duration-500`}>Adipisicing voluptate consectetur culpa et. Esse ipsum magna sint pariatur est. Voluptate consectetur mollit tempor ea in sit nostrud sint id irure labore sunt amet. Consectetur nisi anim magna sit pariatur commodo id qui mollit. Esse duis magna aliquip anim quis consequat minim exercitation. Quis dolore mollit duis do amet ut commodo proident fugiat deserunt velit aliqua cupidatat. Magna et in ea voluptate dolore. Exercitation anim voluptate elit id excepteur et anim tempor minim amet laborum nostrud quis. Aliqua minim excepteur labore pariatur non in duis et veniam nostrud occaecat.</p>
         </div>
         </div>

@@ -27,12 +27,12 @@ export default function BlogPage(){
     };
   }, []);
 
-    return <Element name='blog' id='blog'>
-        <div id='about' className="mx-2 max-w-[90rem] mt-28 md:mx-[10%]">
+    return <Element name='blog' id='blog' className='bg-[--color5]'>
+        <div id='about' className="mx-2 max-w-[90rem] py-14 md:mx-[10%] bg-[--color5]">
     <div className='font-monserrat pb-10 zIndex'>
         <div className="mt-5 self-center grid-row-span-1 row-start-1 row-end-1">
         <div className="container overflow-hidden">
-        <h2 className={`mb-4 font-monserrat text-ms uppercase font-medium my-0 animate-showText transition-all ease duration-300 delay-100 ${
+        <h2 className={`mb-4 font-monserrat text-ms uppercase font-medium my-0 animate-showText transition-all ease duration-300 delay-100 text-[--color1] ${
             isVisible ? 'animate-showText' : 'opacity-0'
           } transition-all duration-500`}>blog</h2>
         </div>
