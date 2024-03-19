@@ -57,18 +57,18 @@ export default function ProjectInvert(){
                         min-[894px]:mx-0">
                 Occaecat eu id ad tempor quis aliqua ipsum. Magna mollit laborum fugiat labore commodo non amet. Sit amet et laboris magna est laboris tempor sunt et eu. Proident dolore non ut ex id pariatur minim culpa. Consequat mollit ea sunt voluptate Lorem id minim eu aliquip duis deserunt ea. Ut quis consequat consectetur pariatur aute occaecat exercitation esse id voluptate nisi laboris anim eu.    
             </p>
-            <div className="flex flex-nowrap items-center my-10 text-center animate__animated animate__fadeIn animate__delay-2s text-[color2]
+            <div className="flex flex-nowrap items-center my-10 text-center animate__animated animate__fadeIn animate__delay-2s text-[13px] text-[color2]
                             min-[894px]:mx-4 min-[894px]:flex-row min-[894px]:justify-end min-[894px]:items-start min-[894px]:w-[90%]">
                 <Link href='https://www.google.com'>
-                    <LuGithub className="mx-4 size-10 bg-[--color5] border-2 border-[--color2] text-[--color1] w-12 h-12"/>
+                    <LuGithub className="mx-4 size-10 bg-[--color5] rounded-tl-[20%] rounded-br-[20%] text-[--color1] w-12 h-12"/>
                     <h3>GitHub</h3>
                 </Link>
                 <Link href='https://www.google.com'>
-                    <RxVercelLogo className="mx-4 size-10 bg-[--color7] border-2 border-[--color2] text-[--color1] w-12 h-12"/>
+                    <RxVercelLogo className="mx-4 size-10 bg-[--color7] rounded-tl-[20%] rounded-br-[20%] text-[--color1] w-12 h-12"/>
                     <h3>Vercel</h3>
                 </Link>
                 <Link href='https://www.google.com'>
-                    <LuArrowDownRight className="mx-4 size-10 bg-[--color6] border-2 border-[--color2] text-[--color1] w-12 h-12"/>
+                    <LuArrowDownRight className="mx-4 size-10 bg-[--color6] rounded-tl-[20%] rounded-br-[20%] text-[--color1] w-12 h-12"/>
                     <h3>Page</h3>
                 </Link>
             </div>

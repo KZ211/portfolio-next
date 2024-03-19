@@ -47,8 +47,8 @@ export default function ProjectsPage(){
     return <Element name='projects' id='projects' className='bg-[--color3]'>
         <header className="mx-2 bg-[--color3] pt-4
                            md:mx-[10%] text-[--color2]">
-            <main className="mb-32 grid grid-cols-1 grid-rows-[150px_1000px_1000px_1000px] font-montserrat justify-items-center
-                            min-[894px]:grid-rows-[100px_600px_600px_380px] min-[894px]:py-10">
+            <main className="grid grid-cols-1 grid-rows-[150px_1000px_1000px_1000px_1000px_1000px] font-montserrat justify-items-center
+                            min-[894px]:grid-rows-[100px_600px_600px_600px_600px_600px] min-[894px]:py-10">
                 <header className="container row-start-1 row-end-1
                                     min-[894px]:mx-0 min-[894px]:justify-self-start">
                     <h1 className={`mt-14 min-[894px]:mt-4 font-montserrat font-medium uppercase text-min-[894px] animate-showText transition-all ease duration-300 delay-100 ${
@@ -68,6 +68,18 @@ export default function ProjectsPage(){
                     <ProjectInvert/>
                 </article>
                 <article className={`container row-start-4 row-end-4 my-4 animate-showText transition-all ease duration-300 delay-100
+                                    min-[894px]:justify-center min-[894px]:items-center min-[894px]:justify-self-start ${
+                                        isVisible2 ? 'animate__animated animate__fadeInUp' : 'opacity-0'
+                                      } transition-all duration-500`}>
+                    <Project/>
+                </article>
+                <article className={`container justify-end row-start-5 row-end-5 my-4 animate-showText transition-all ease duration-300 delay-100
+                                    min-[894px]:justify-center min-[894px]:items-center min-[894px]:justify-self-end min-[894px]:w-full min-[894px]:h-full ${
+                                        isVisible1 ? 'animate__animated animate__fadeInUp' : 'opacity-0'
+                                      } transition-all duration-500`}>
+                    <ProjectInvert/>
+                </article>
+                <article className={`container row-start-6 row-end-6 my-4 animate-showText transition-all ease duration-300 delay-100
                                     min-[894px]:justify-center min-[894px]:items-center min-[894px]:justify-self-start ${
                                         isVisible2 ? 'animate__animated animate__fadeInUp' : 'opacity-0'
                                       } transition-all duration-500`}>

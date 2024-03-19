@@ -18,9 +18,9 @@ export default function NavBar(){
     }
 
     const logoImage = 'https://drive.google.com/uc?id=1e_QEjOcdA2x94YY09z4wCyEJ3SIvq3Gk';
-    return <div className="mx-2 h-16 bg-[--color1] pt-0 top-0 bottom-auto left-0 right-0 fixed z-10 max-w-[90rem] border-b-2
-                           md:mx-[10%]">
-        <div className="flex justify-between items-center">
+    return <div className="mx-2 h-16 w-full bg-[--color1] pt-0 top-0 bottom-auto left-0 right-0 fixed z-10 border-b-2
+                            md:mx-0">
+        <div className="flex justify-between items-center md:mx-[10%]">
             <div className="inline-block max-w-full">
                 <Link to='home' smooth duration={500} className="max-w-full inline-block cursor-pointer">
                     <Image className="max-w-full align-middle inline-block mt-2 w-auto h-auto saturate-150" 
@@ -48,16 +48,16 @@ export default function NavBar(){
                             <span className="bg-black h-[1px] w-[270px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
-                    <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link to='projects' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[327px]:text-6xl min-[396px]:text-7xl cursor-pointer">
-                            Projects
-                            <span className="bg-black h-[1px] w-[370px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
-                        </Link>
-                    </li>
                     <li className={`${inicializated == true ? `max-w-[189,72px] inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
                         <Link to='blog' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[396px]:text-7xl cursor-pointer">
                             Blog
                             <span className="bg-black h-[1px] w-[200px] -translate-x-80 group-hover:translate-x-0 transition-all ease duration-200"/>
+                        </Link>
+                    </li>
+                    <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
+                        <Link to='projects' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[327px]:text-6xl min-[396px]:text-7xl cursor-pointer">
+                            Projects
+                            <span className="bg-black h-[1px] w-[370px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
                         </Link>
                     </li>
                 </ul>
