@@ -63,7 +63,7 @@ export default function AboutPage(){
                           min-[894px]:text-min-[894px]
                           min-[894px]:ml-2 
                           ${isVisible1 ? 'animate__animated animate__fadeInRight' : 'opacity-0'} transition-all duration-500`}
-                          >Hello, my name is Alexis Jares. I&apos;m an enthusiast of technology in general. I&apos;ve always been that guy whom parents and close relatives would ask for a solution to their phone or computer&apos;s low performance, the one kids would ask to download a video game for them to enjoy, or the one they would request Word or Excel lessons from, as if I were an IT technician. I believe that most of us who are involved in this field have been labeled as "hackers" at some point, even without knowing how to install a program in a Linux terminal.</p>
+                          >Hello, my name is Alexis Jares. I&apos;m an enthusiast of technology in general. I&apos;ve always been that guy whom parents and close relatives would ask for a solution to their phone or computer&apos;s low performance, the one kids would ask to download a video game for them to enjoy, or the one they would request Word or Excel lessons from, as if I were an IT technician. I believe that most of us who are involved in this field have been labeled as &quot;hackers&quot; at some point, even without knowing how to install a program in a Linux terminal.</p>
         </div>
         </div>
         <div className="mt-5 self-start grid-row-span-1 
