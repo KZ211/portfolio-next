@@ -57,7 +57,7 @@ export default function ProjectsPage(){
                                       } transition-all duration-500`}>
                     <Project title='Nextlevel' 
                              subtitle='Next Project' 
-                             description='Esse eu duis incididunt amet. Eu do officia laboris ut. Ad exercitation eiusmod sit ut officia ut ea velit exercitation. Anim esse et minim amet aute laboris ullamco laborum excepteur. Ut consequat elit pariatur voluptate consequat.'
+                             description='I have carried out this project throughout a course on Udemy about React.js and Next.js. Within the course, I learned many resources, both for design, logic, and ways to structure code or modularize components to improve their subsequent readability.'
                              imageProp='https://drive.google.com/uc?id=1aIKZ6hO7v5erlkMOwPpP6-BmhZTQ7Fpg'
                              gitHub={true}
                              vercel={true}
@@ -73,7 +73,7 @@ export default function ProjectsPage(){
                                       } transition-all duration-500`}>
                     <ProjectInvert title='4Pilares' 
                              subtitle='Google pages' 
-                             description='Esse eu duis incididunt amet. Eu do officia laboris ut. Ad exercitation eiusmod sit ut officia ut ea velit exercitation. Anim esse et minim amet aute laboris ullamco laborum excepteur. Ut consequat elit pariatur voluptate consequat.'
+                             description='This page was the result of a collaboration with a small volleyball club in my area to which I belonged. They needed a "Letter of Introduction" to share their passion for teaching and the love these people feel for this beautiful sport. When looking for a proposal that does not involve a paid monthly fee, the idea of ​​developing the page on "Google Pages" arose.'
                              imageProp='https://drive.google.com/uc?id=1ah4niKWodBk0nSUBvl2xPyoz3rSbafre'
                              gitHub={false}
                              vercel={false}
@@ -87,9 +87,9 @@ export default function ProjectsPage(){
                                     min-[894px]:justify-center min-[894px]:items-center min-[894px]:justify-self-start ${
                                         isVisible2 ? 'animate__animated animate__fadeInUp' : 'opacity-0'
                                       } transition-all duration-500`}>
-                    <Project title='project1' 
-                             subtitle='Web Dev' 
-                             description='Esse eu duis incididunt amet. Eu do officia laboris ut. Ad exercitation eiusmod sit ut officia ut ea velit exercitation. Anim esse et minim amet aute laboris ullamco laborum excepteur. Ut consequat elit pariatur voluptate consequat.'
+                    <Project title='coldental' 
+                             subtitle='Wordpress' 
+                             description='My first project developed in WordPress. The design of this page was very intuitive thanks to the theme used, "Avada Theme", which had the "Avada Live" option. This allowed me to modify the different boxes, texts, sizes, and colors, along with many other different options. These features allowed me to carry out my task for this dentistry located in CABA.'
                              imageProp='https://drive.google.com/uc?id=1qzLcVLPKWsTsXdsjqQFN2l81uivhV0Me'
                              gitHub={false}
                              vercel={false}
