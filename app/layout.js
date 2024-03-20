@@ -2,8 +2,8 @@ import "./globals.css";
 import NavBar from "./components/navbar/nav-var";
 
 export const metadata = {
-  title: "Home",
-  description: "Pagina Principal",
+  title: "Alexis Jares",
+  description: "This is mi profesional portfolio",
 };
 
 export default function RootLayout({ children }) {
