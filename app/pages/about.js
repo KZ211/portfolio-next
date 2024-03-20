@@ -63,7 +63,7 @@ export default function AboutPage(){
                           min-[894px]:text-min-[894px]
                           min-[894px]:ml-2 
                           ${isVisible1 ? 'animate__animated animate__fadeInRight' : 'opacity-0'} transition-all duration-500`}
-                          >Hello, my name is Alexis Jares. I'm an enthusiast of technology in general. I've always been that guy whom parents and close relatives would ask for a solution to their phone or computer's low performance, the one kids would ask to download a video game for them to enjoy, or the one they would request Word or Excel lessons from, as if I were an IT technician. I believe that most of us who are involved in this field have been labeled as "hackers" at some point, even without knowing how to install a program in a Linux terminal.</p>
+                          >Hello, my name is Alexis Jares. I&apos;m an enthusiast of technology in general. I&apos;ve always been that guy whom parents and close relatives would ask for a solution to their phone or computer&apos;s low performance, the one kids would ask to download a video game for them to enjoy, or the one they would request Word or Excel lessons from, as if I were an IT technician. I believe that most of us who are involved in this field have been labeled as "hackers" at some point, even without knowing how to install a program in a Linux terminal.</p>
         </div>
         </div>
         <div className="mt-5 self-start grid-row-span-1 
@@ -75,7 +75,7 @@ export default function AboutPage(){
                         xl:max-w-[900px] 
                          min-[894px]:ml-2">
             <p className={`text-min-[894px] min-[894px]:text-min-[894px] opacity-65 text-[--color1]
-                            ${isVisible2 ? 'animate__animated animate__fadeInRight' : 'opacity-0'} transition-all duration-500`}>The funniest part of the situation is that, despite blushing at those innocent praises, from our perspective, they were the beginning of something wonderful.<br/>I always enjoyed using my computer, although I never imagined that I could work from it. The information it provided me with was more than enough. Later on, I began to explore how I could contribute to the development of an area that was about to flourish. That's when my attention turned to the path of a frontend developer.</p>
+                            ${isVisible2 ? 'animate__animated animate__fadeInRight' : 'opacity-0'} transition-all duration-500`}>The funniest part of the situation is that, despite blushing at those innocent praises, from our perspective, they were the beginning of something wonderful.<br/>I always enjoyed using my computer, although I never imagined that I could work from it. The information it provided me with was more than enough. Later on, I began to explore how I could contribute to the development of an area that was about to flourish. That&apos;s when my attention turned to the path of a frontend developer.</p>
         </div>
         </div>
     </div>
