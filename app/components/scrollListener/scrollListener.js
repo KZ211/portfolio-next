@@ -20,11 +20,11 @@ const ScrollListener = () => {
       setIsVisible(scrollY > threshold ? true : false);
       setIsVisible1(scrollY > (threshold + 200) ? true : false);
       setIsVisible2(scrollY > (threshold + 700) ? true : false);
-      setIsVisible3(scrollY > (threshold + 1100) ? true : false);
-      setIsVisible4(scrollY > (threshold + 1700) ? true : false);
-      setIsVisible5(scrollY > (threshold + 2300) ? true : false);
-      setIsVisible6(scrollY > (threshold + 2900) ? true : false);
-      setIsVisible7(scrollY > (threshold + 3700) ? true : false);
+      setIsVisible3(scrollY > (threshold + 1400) ? true : false);
+      setIsVisible4(scrollY > (threshold + 2000) ? true : false);
+      setIsVisible5(scrollY > (threshold + 2600) ? true : false);
+      setIsVisible6(scrollY > (threshold + 3200) ? true : false);
+      setIsVisible7(scrollY > (threshold + 4000) ? true : false);
     };
 
     window.addEventListener('scroll', handleScroll);
