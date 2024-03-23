@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   
   return (
       <html lang="en">
-          <body className="bg-[--color1] ::-webkit-scrollbar ::-webkit-scrollbar-track ::-webkit-scrollbar-thumb .scrollbar-track .scrollbar-thumb">
+          <body className="bg-[--color1] ::-webkit-scrollbar ::-webkit-scrollbar-track ::-webkit-scrollbar-thumb .scrollbar-track .scrollbar-thumb overflow-x-hidden">
             <NavBar/>
             {children}
           </body>
