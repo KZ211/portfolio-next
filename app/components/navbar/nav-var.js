@@ -18,7 +18,7 @@ export default function NavBar(){
     }
 
     const logoImage = 'https://drive.google.com/uc?id=1e_QEjOcdA2x94YY09z4wCyEJ3SIvq3Gk';
-    return <div className="mx-2 h-16 w-full bg-[--color1] pt-0 top-0 bottom-auto left-0 right-0 fixed z-10 border-b-2
+    return <div className="h-16 w-full bg-[--color1] pt-0 top-0 bottom-auto left-0 right-0 fixed z-10 border-b-2
                             md:mx-0">
         <div className="flex justify-between items-center md:mx-[10%]">
             <div className="inline-block max-w-full">

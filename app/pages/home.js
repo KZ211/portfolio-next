@@ -30,11 +30,11 @@ export default function HomePage(){
 
   return <Element name='home' id='home'>
     <div className='font-monserrat pt-10 grid zIndex max-w-[90rem] bg-[--color1]
-                            grid-rows-[120px_120px_200px_140px_180px] grid-cols-1 mx-2
-                            md:grid-rows-[100px_180px_30px] md:grid-cols-2 md:pt-20 md:mx-[10%]
-                            lg:grid-rows-[130px_250px_30px]
-                            xl:grid-rows-[150px_260px_30px]
-                            2xl:grid-rows-[200px_300px_30px]
+                            grid-rows-[130px_130px_200px_260px] grid-cols-1 mx-2
+                            md:grid-rows-[100px_180px] md:grid-cols-2 md:pt-20 md:mx-[10%] md:pb-10
+                            lg:grid-rows-[130px_210px] lg:pb-10
+                            xl:grid-rows-[150px_260px] xl:pb-10
+                            2xl:grid-rows-[200px_300px]
                             '>
         
         <div className="self-end grid-row-span-1
@@ -82,10 +82,11 @@ export default function HomePage(){
       
       <div className="container flex flex-wrap row-start-3 row-end-3 col-start-2 col-end-2 text-md max-w-lg animate__animated animate__fadeIn animate__delay-2s
                       sm:text-xl sm:max-w-2xl
-                      md:content-center md:text-base md:ml-3
-                      lg:text-xl">
+                      md:content-center md:text-xs md:ml-3
+                      lg:text-[17px] 
+                      xl:text-lg">
       
-        <p className="uppercase font-[400] text-[--color2] mb-10">I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
+        <p className="uppercase font-[400] text-[--color2] mb-8 md:mb-8 lg:mb-8 xl:mb-10">I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
         <p className="uppercase font-[400] underline text-lg text-[--color2]"> React Frontend Developer </p>
       </div>
     </div>
