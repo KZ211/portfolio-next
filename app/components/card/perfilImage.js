@@ -20,7 +20,7 @@ export default function PerfilImage(){
                     sm:justify-between sm:flex-nowrap">
         <div className="hidden text-5xl max-w-[15%] w-full
                         sm:flex sm:text-start sm:justify-start sm:items-center
-                        2xl:text-7xl">
+                        min-[1900px]:text-7xl">
             <div className="flex flex-wrap items-center max-w-[12rem]">
             <LinkS smooth to='home' className="hover:underline cursor-pointer my-4"><span className="text-[--color6]">H</span>ome</LinkS>
             <LinkS smooth to='about' className="hover:underline cursor-pointer my-4"><span className="text-[--color2]">A</span>bout</LinkS>
@@ -29,23 +29,23 @@ export default function PerfilImage(){
             </div>
         </div>
         <div className="mb-4 flex justify-center items-center rounded-3xl
-                            md:mx-[10%] 2xl:max-w-[40%]">
+                            md:mx-[10%] min-[1900px]:max-w-[40%]">
             <Image className="border border-transparent rounded-[300px] hidden
-                              sm:block 2xl:w-[500px] 2xl:h-[500px]" src={alexisImage} alt="imagen de alexis con una mano en el menton mirando a la nada" width={350} height={350}/>
+                              sm:block min-[1900px]:w-[500px] min-[1900px]:h-[500px]" src={alexisImage} alt="imagen de alexis con una mano en el menton mirando a la nada" width={350} height={350}/>
         </div>
         <div className="flex flex-nowrap items-end justify-center max-w-[15%]
                         sm:flex-wrap md:justify-end">
             <Link target="_blank" className="flex flex-wrap items-center justify-center cursor-pointer mx-4 md:justify-end md:flex-nowrap md:m-0" href='https://github.com/KZ211'>
-                <h1 className="2xl:text-xl">Github</h1>
-                <LuGithub className="size-20 2xl:size-28 text-[--color1] bg-[--color5] rounded-tl-[20%] rounded-br-[20%] ml-1"/>
+                <h1 className="min-[1900px]:text-xl">Github</h1>
+                <LuGithub className="size-20 min-[1900px]:size-28 text-[--color1] bg-[--color5] rounded-tl-[20%] rounded-br-[20%] ml-1"/>
             </Link>
             <Link target="_blank" className="flex flex-wrap items-center justify-center cursor-pointer mx-4 md:justify-end md:flex-nowrap md:m-0" href='https://www.linkedin.com/in/alexis-jares-b70857235?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BkXkg3n3jTXOOsJfEpuuxtg%3D%3D'>
-                <h1 className="2xl:text-xl">Linkedin</h1>
-                <FaLinkedinIn className="size-20 2xl:size-28 text-[--color1] bg-[--color6] rounded-tl-[15%] rounded-br-[15%] ml-1"/>
+                <h1 className="min-[1900px]:text-xl">Linkedin</h1>
+                <FaLinkedinIn className="size-20 min-[1900px]:size-28 text-[--color1] bg-[--color6] rounded-tl-[15%] rounded-br-[15%] ml-1"/>
             </Link>
             <Link  className="flex flex-wrap items-center justify-center cursor-pointer mx-4 md:justify-end md:flex-nowrap md:m-0" href='mailto:alexis.jares12@gmail.com'>
-                <h1 className="2xl:text-xl">Email</h1>
-                <MdAlternateEmail className="size-20 2xl:size-28 text-[--color1] bg-[--color7] rounded-tl-[20%] rounded-br-[20%] ml-1"/>
+                <h1 className="min-[1900px]:text-xl">Email</h1>
+                <MdAlternateEmail className="size-20 min-[1900px]:size-28 text-[--color1] bg-[--color7] rounded-tl-[20%] rounded-br-[20%] ml-1"/>
             </Link>
         </div>
     </div>
