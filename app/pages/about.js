@@ -1,31 +1,6 @@
-import React, { useEffect, useState } from 'react';
 import {Element} from 'react-scroll';
 
-export default function AboutPage(){
-
-    const [isVisible, setIsVisible] = useState(false);
-    const [isVisible1, setIsVisible1] = useState(false);
-    const [isVisible2, setIsVisible2] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-
-      const threshold = 100;
-      const threshold1 = 200;
-      const threshold2 = 300;
-
-      setIsVisible(scrollY > threshold);
-      setIsVisible1(scrollY > threshold1);
-      setIsVisible2(scrollY > threshold2);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+export default function AboutPage({isVisible, isVisible2}){
 
     return <Element name='about' id='about' className='bg-[--color2]'>  
     <div id='about' className="mx-2 max-w-[90rem] bg-[--color2]
@@ -61,8 +36,8 @@ export default function AboutPage(){
                         ">
             <p className={`text-min-[894px] font-medium my-0 opacity-65 animate__animated animate__fadeIn text-[--color1]
                           min-[894px]:text-min-[894px]
-                          min-[894px]:ml-2 
-                          ${isVisible1 ? 'animate__animated animate__fadeInRight' : 'opacity-0'} transition-all duration-500`}
+                          min-[894px]:ml-2
+                          ${isVisible ? 'animate__animated animate__fadeInRight' : 'hidden'} transition-all duration-500`}
                           >Hello, my name is Alexis Jares. I&apos;m an enthusiast of technology in general. I&apos;ve always been that guy whom parents and close relatives would ask for a solution to their phone or computer&apos;s low performance, the one kids would ask to download a video game for them to enjoy, or the one they would request Word or Excel lessons from, as if I were an IT technician. I believe that most of us who are involved in this field have been labeled as &quot;hackers&quot; at some point, even without knowing how to install a program in a Linux terminal.</p>
         </div>
         </div>
@@ -75,7 +50,7 @@ export default function AboutPage(){
                         xl:max-w-[900px] 
                          min-[894px]:ml-2">
             <p className={`text-min-[894px] min-[894px]:text-min-[894px] opacity-65 text-[--color1]
-                            ${isVisible2 ? 'animate__animated animate__fadeInRight' : 'opacity-0'} transition-all duration-500`}>The funniest part of the situation is that, despite blushing at those innocent praises, from our perspective, they were the beginning of something wonderful.<br/>I always enjoyed using my computer, although I never imagined that I could work from it. The information it provided me with was more than enough. Later on, I began to explore how I could contribute to the development of an area that was about to flourish. That&apos;s when my attention turned to the path of a frontend developer.</p>
+                            ${isVisible2 ? 'animate__animated animate__fadeInRight' : 'hidden'} transition-all duration-500`}>The funniest part of the situation is that, despite blushing at those innocent praises, from our perspective, they were the beginning of something wonderful.<br/>I always enjoyed using my computer, although I never imagined that I could work from it. The information it provided me with was more than enough. Later on, I began to explore how I could contribute to the development of an area that was about to flourish. That&apos;s when my attention turned to the path of a frontend developer.</p>
         </div>
         </div>
     </div>

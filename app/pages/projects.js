@@ -1,41 +1,8 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
 import {Element} from 'react-scroll';
 import Project from '../components/card/project';
 import ProjectInvert from '../components/card/projectInvert';
 
-export default function ProjectsPage(){
-
-    const [isVisible, setIsVisible] = useState(false);
-    const [isVisible1, setIsVisible1] = useState(false);
-    const [isVisible2, setIsVisible2] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Calcula la posición del scroll
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-
-      // Define el umbral de visibilidad (ajústalo según sea necesario)
-      const threshold = 800;
-      const threshold1 = 1300;
-      const threshold2 = 1800;
-
-      // Activa la visibilidad cuando el usuario ha hecho scroll más allá del umbral
-      setIsVisible(scrollY > threshold);
-      setIsVisible1(scrollY > threshold1);
-      setIsVisible2(scrollY > threshold2);
-    };
-
-    // Agrega un evento de escucha al scroll
-    window.addEventListener('scroll', handleScroll);
-
-    // Limpia el evento de escucha al desmontar el componente
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+export default function ProjectsPage({isVisible,isVisible1,isVisible2,isVisible3}){
     const fotoEjemplo = 'https://assets-global.website-files.com/65bf99434e8a00ec776f7cdc/65bf9afc13cac7610082a84e_rodion-kutsaiev-6W8H4puOJB0-unsplash.jpg';
     const project1 = 'https://drive.google.com/uc?id=1IrqIKek3r-ZKcefbLeFlseXWGD7k5Lre';
     const project1_1 = '';
@@ -101,7 +68,7 @@ export default function ProjectsPage(){
                 </article>
                 <article className={`container justify-end row-start-5 row-end-5 my-4 animate-showText transition-all ease duration-300 delay-100
                                     min-[894px]:justify-center min-[894px]:items-center min-[894px]:justify-self-end min-[894px]:w-full min-[894px]:h-full ${
-                                        isVisible1 ? 'animate__animated animate__fadeInUp' : 'opacity-0'
+                                        isVisible3 ? 'animate__animated animate__fadeInUp' : 'opacity-0'
                                       } transition-all duration-500`}>
                     <ProjectInvert title='project1' 
                              subtitle='Web Dev' 

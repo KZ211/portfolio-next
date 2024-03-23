@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import {Element} from 'react-scroll';
 import Image from "next/image";

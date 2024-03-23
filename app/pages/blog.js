@@ -1,23 +1,19 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import {Element} from 'react-scroll';
 import Card from '../components/card/card';
 
 export default function BlogPage(){
     const [isVisible, setIsVisible] = useState(false);
-    const [isVisible1, setIsVisible1] = useState(false);
-    const [isVisible2, setIsVisible2] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
 
-      const threshold = 100;
-      const threshold1 = 200;
-      const threshold2 = 300;
+      const threshold = 800;
 
-      setIsVisible(scrollY > threshold);
-      setIsVisible1(scrollY > threshold1);
-      setIsVisible2(scrollY > threshold2);
+      setIsVisible(scrollY > threshold ? true : false);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -29,7 +25,7 @@ export default function BlogPage(){
 
     return <Element name='blog' id='blog' className='bg-[--color5]'>
         <div id='about' className="mx-2 max-w-[90rem] py-14 md:mx-[10%] bg-[--color5]">
-    <div className='font-monserrat pb-10 zIndex'>
+    <div className={`font-monserrat pb-10 zIndex  ${isVisible ? 'animate__animated animate__fadeIn' : 'animate__animated animate__fadeOut'} transition-all duration-500`}>
         <div className="mt-5 self-center grid-row-span-1 row-start-1 row-end-1">
         <div className="container overflow-hidden">
         <h2 className={`mb-4 font-monserrat text-ms uppercase font-medium my-0 animate-showText transition-all ease duration-300 delay-100 text-[--color1] ${

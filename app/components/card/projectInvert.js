@@ -22,9 +22,9 @@ export default function ProjectInvert({title, subtitle, description, imageProp, 
       const threshold2 = 1800;
 
       // Activa la visibilidad cuando el usuario ha hecho scroll más allá del umbral
-      setIsVisible(scrollY > threshold);
-      setIsVisible1(scrollY > threshold1);
-      setIsVisible2(scrollY > threshold2);
+      setIsVisible(scrollY > threshold ? true : false);
+      setIsVisible1(scrollY > threshold1 ? true : false);
+      setIsVisible2(scrollY > threshold2 ? true : false);
     };
 
     // Agrega un evento de escucha al scroll
