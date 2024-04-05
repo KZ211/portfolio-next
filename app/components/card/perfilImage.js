@@ -12,7 +12,7 @@ export default function PerfilImage({isVisible}){
     const logoAJ = 'https://drive.google.com/uc?id=1e_QEjOcdA2x94YY09z4wCyEJ3SIvq3Gk';
     const alexisImage = 'https://drive.google.com/uc?id=1FTXmZoeOiTdEz1CyGqe1ojtGqvdbEIyP';
 
-    return <div className="mb-52 max-sm: sm:flex-nowrap">
+    return <div className="mb-52 sm:flex-nowrap">
         <div className="mb-4 flex justify-center items-center rounded-3xl
                         sm:hidden">
                 <Image className="border border-transparent rounded-[300px]" src={alexisImage} alt="imagen de alexis con una mano en el menton mirando a la nada" width={350} height={350}/>
