@@ -12,7 +12,7 @@ export default function PerfilImage({isVisible}){
     const logoAJ = 'https://drive.google.com/uc?id=1e_QEjOcdA2x94YY09z4wCyEJ3SIvq3Gk';
     const alexisImage = 'https://drive.google.com/uc?id=1FTXmZoeOiTdEz1CyGqe1ojtGqvdbEIyP';
 
-    return <div className="mb-52 sm:flex-nowrap">
+    return <div className="mb-52 max-sm: sm:flex-nowrap">
         <div className="mb-4 flex justify-center items-center rounded-3xl
                         sm:hidden">
                 <Image className="border border-transparent rounded-[300px]" src={alexisImage} alt="imagen de alexis con una mano en el menton mirando a la nada" width={350} height={350}/>
@@ -50,7 +50,7 @@ export default function PerfilImage({isVisible}){
             </Link>
         </div>
     </div>
-        <div className={`absolute justify-center items-center w-[100%] flex ${isVisible ? 'animate__animated animate__fadeInUp' : 'animate__animated animate__fadeOutUp'} transition-all duration-500`}>
+        <div className={`justify-center items-center w-[100%] flex ${isVisible ? 'animate__animated animate__fadeInUp' : 'animate__animated animate__fadeOutUp'} transition-all duration-500`}>
             <Image src={logoAJ} alt="Logo con las iniciales AJ, contiene un 70% del logo en negro y algunos detalles en colores llamativos" width={100} height={100}/>
         </div>
     </div>
