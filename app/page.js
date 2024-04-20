@@ -17,7 +17,7 @@ export default function Home() {
       <AboutPage isVisible={isVisible} isVisible2={isVisible1}/>
       <BlogPage isVisible={isVisible2}/>
       <ProjectsPage isVisible={isVisible3} isVisible1={isVisible4} isVisible2={isVisible5} isVisible3={isVisible6}/>
-      <PerfilImage isVisible={isVisible7}/>
+      <PerfilImage isVisible={isVisible6}/>
     </>
   );
 }
