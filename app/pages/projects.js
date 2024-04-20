@@ -66,22 +66,6 @@ export default function ProjectsPage({isVisible,isVisible1,isVisible2,isVisible3
                              linkPage='https://coldental.stevearagonsite.com/'
                              />
                 </article>
-                <article className={`container justify-end row-start-5 row-end-5 my-4 animate-showText transition-all ease duration-300 delay-100
-                                    min-[894px]:justify-center min-[894px]:items-center min-[894px]:justify-self-end min-[894px]:w-full min-[894px]:h-full ${
-                                        isVisible3 ? 'animate__animated animate__fadeInUp' : 'opacity-0'
-                                      } transition-all duration-500`}>
-                    <ProjectInvert title='project1' 
-                             subtitle='Web Dev' 
-                             description='Esse eu duis incididunt amet. Eu do officia laboris ut. Ad exercitation eiusmod sit ut officia ut ea velit exercitation. Anim esse et minim amet aute laboris ullamco laborum excepteur. Ut consequat elit pariatur voluptate consequat.'
-                             imageProp='https://assets-global.website-files.com/65bf99434e8a00ec776f7cdc/65bf9afc13cac7610082a84e_rodion-kutsaiev-6W8H4puOJB0-unsplash.jpg'
-                             gitHub={true}
-                             vercel={true}
-                             pageIcon={true}
-                             linkGithub='google.com'
-                             linkVercel=''
-                             linkPage=''
-                             />
-                </article>
             </main>
         </header>
     </Element>
