@@ -10,8 +10,8 @@ export default function ProjectsPage({isVisible,isVisible1,isVisible2,isVisible3
     return <Element name='projects' id='projects' className='bg-[--color3]'>
         <header className="mx-2 bg-[--color3] pt-4
                            md:mx-[10%] text-[--color2]">
-            <main className="grid grid-cols-1 grid-rows-[150px_1100px_1000px_900px_1000px] font-montserrat justify-items-center
-                            min-[894px]:grid-rows-[100px_600px_600px_600px_600px] min-[894px]:py-10">
+            <main className="grid grid-cols-1 grid-rows-[150px_1100px_1000px_1000px] font-montserrat justify-items-center
+                            min-[894px]:grid-rows-[100px_600px_600px_600px] min-[894px]:py-10">
                 <header className="container row-start-1 row-end-1
                                     min-[894px]:mx-0 min-[894px]:justify-self-start">
                     <h1 className={`mt-14 min-[894px]:mt-4 font-montserrat font-medium uppercase text-min-[894px] animate-showText transition-all ease duration-300 delay-100 ${
