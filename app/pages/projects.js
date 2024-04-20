@@ -29,7 +29,7 @@ export default function ProjectsPage({isVisible,isVisible1,isVisible2,isVisible3
                              gitHub={true}
                              vercel={true}
                              pageIcon={false}
-                             linkGithub='https://github.com/KZ211/next-level-food'
+                             linkGithub='https://github.com/AlexisJares/nextLevelFood'
                              linkVercel='https://next-level-food-eight.vercel.app/'
                              linkPage=''
                              />
