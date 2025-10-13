@@ -88,8 +88,8 @@ export default function HomePage(){
                       lg:text-[17px] 
                       xl:text-lg">
       
-        <p className="uppercase font-[400] text-[--color2] mb-8 md:mb-8 lg:mb-8 xl:mb-10">I&apos;m a Computer Engineering student at the University of Tres de Febrero (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
-        <p className="uppercase font-[400] underline text-lg text-[--color2]"> React Frontend Developer </p>
+        <p className="uppercase font-[400] text-[--color2] mb-8 md:mb-8 lg:mb-8 xl:mb-10">I&apos;m a Computer Engineering student at the &quot;Universidad De Tres de Febrero&quot; (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
+        <p className="uppercase font-[400] underline text-lg text-[--color2]"> Full-Stack Developer / AI App Integration </p>
       </div>
     </div>
     <div className="grid-row-span-1
@@ -98,7 +98,7 @@ export default function HomePage(){
     
       <div className="row-start-2 row-end-2 col-span-2 container w-full h-full inline
                       ">
-        <Image className="animate-showText transition-all ease duration-300 delay-100
+        <Image className="animate-showText transition-all ease duration-300 delay-100 rounded-lg
                           sm:w-[700px] sm:h-[300px]
                           md:h-[180px] md:w-full
                           lg:h-[245px]
