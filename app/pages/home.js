@@ -90,11 +90,6 @@ export default function HomePage(){
       
         <p className="uppercase font-[400] text-[--color2] mb-8 md:mb-8 lg:mb-8 xl:mb-10">I&apos;m a Computer Engineering student at the &quot;Universidad De Tres de Febrero&quot; (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
         <p className="uppercase font-[400] underline text-lg text-[--color2]"> Full-Stack Developer / AI App Integration </p>
-        {/* <div className='w-full 
-                        xl:mt-10
-                        2xl:mt-10'>
-          <button className='bg-[--color2] text-[--color1] font-bold py-2 px-4 rounded-full'>CHAT IA TEST</button>
-        </div> */}
       </div>
     </div>
     <div className="grid-row-span-1
