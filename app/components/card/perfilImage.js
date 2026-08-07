@@ -36,7 +36,7 @@ export default function PerfilImage({isVisible}){
         </div>
         <div className={`flex flex-nowrap items-end justify-center max-w-[15%]
                         sm:flex-wrap md:justify-end ${isVisible ? 'animate__animated animate__fadeInRight' : 'animate__animated animate__fadeOutRight'} transition-all duration-500`}>
-            <Link target="_blank" className="flex flex-wrap items-center justify-center cursor-pointer mx-4 md:justify-end md:flex-nowrap md:m-0" href='https://github.com/AlexisJares'>
+            <Link target="_blank" className="flex flex-wrap items-center justify-center cursor-pointer mx-4 md:justify-end md:flex-nowrap md:m-0" href='https://github.com/KZ211'>
                 <h1 className="min-[1900px]:text-xl">Github</h1>
                 <LuGithub className="size-20 min-[1900px]:size-28 text-[--color1] bg-[--color5] rounded-tl-[20%] rounded-br-[20%] ml-1"/>
             </Link>
