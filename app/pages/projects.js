@@ -27,11 +27,11 @@ export default function ProjectsPage({isVisible,isVisible1,isVisible2,isVisible3
                              description='I have carried out this project throughout a course on Udemy about React.js and Next.js. Within the course, I learned many resources, both for design, logic, and ways to structure code or modularize components to improve their subsequent readability.'
                              imageProp='https://drive.google.com/uc?id=1aIKZ6hO7v5erlkMOwPpP6-BmhZTQ7Fpg'
                              gitHub={true}
-                             vercel={true}
-                             pageIcon={false}
+                             vercel={false}
+                             pageIcon={true}
                              linkGithub='https://github.com/AlexisJares/nextLevelFood'
-                             linkVercel='https://next-level-food-eight.vercel.app/'
-                             linkPage=''
+                             linkVercel=''
+                             linkPage='https://next-level-food-eight.vercel.app/'
                              />
                 </article>
                 <article className={`container justify-end row-start-3 row-end-3 my-4 animate-showText transition-all ease duration-300 delay-100
@@ -54,16 +54,16 @@ export default function ProjectsPage({isVisible,isVisible1,isVisible2,isVisible3
                                     min-[894px]:justify-center min-[894px]:items-center min-[894px]:justify-self-start ${
                                         isVisible2 ? 'animate__animated animate__fadeInUp' : 'opacity-0'
                                       } transition-all duration-500`}>
-                    <Project title='coldental' 
-                             subtitle='Wordpress' 
-                             description='My first project developed in WordPress. The design of this page was very intuitive thanks to the theme used, "Avada Theme", which had the "Avada Live" option. This allowed me to modify the different boxes, texts, sizes, and colors, along with many other different options. These features allowed me to carry out my task for this dentistry located in CABA.'
-                             imageProp='https://drive.google.com/uc?id=1qzLcVLPKWsTsXdsjqQFN2l81uivhV0Me'
-                             gitHub={false}
+                    <Project title='Couching' 
+                             subtitle='Astro' 
+                             description='Designed and developed a scalable freelance web application for a private client using Astro, React, TypeScript, and Tailwind CSS. The project started as a professional landing page and was architected to evolve into a full appointment booking platform featuring payment gateway integration, a metrics dashboard, and a Supabase/PostgreSQL backend for appointment and payment management. Emphasis was placed on clean architecture, reusable components, and long-term scalability.'
+                             imageProp='https://drive.google.com/uc?id=1YJahuwEgB0XzYIa8BXWegjgoWZDiUBsK'
+                             gitHub={true}
                              vercel={false}
                              pageIcon={true}
-                             linkGithub=''
+                             linkGithub='https://github.com/rosana-colman/rosana-couching-page'
                              linkVercel=''
-                             linkPage='https://coldental.stevearagonsite.com/'
+                             linkPage='https://github.com/rosana-colman/rosana-couching-page'
                              />
                 </article>
             </main>

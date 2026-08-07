@@ -45,8 +45,13 @@ export default function Project({title, subtitle, description, imageProp, gitHub
             <div className="min-[894px]:block text-[--color2]">
             <div className="min-[894px]:flex min-[894px]:w-full min-[894px]:justify-center flex-wrap">
             <div className="min-[894px]:flex min-[894px]:flex-nowrap">
-            <Image className="w-full h-full animate-showText transition-all ease duration-300 delay-500 md:border-2 border-[--color2]
-                            min-[894px]:w-96 min-[894px]:h-96 grayscale hover:grayscale-0" src={fotoEjemplo} width={1920} height={1536} alt=''/>
+            <Image 
+              className="w-full h-full object-cover animate-showText transition-all ease duration-300 delay-500 md:border-2 border-[--color2] min-[894px]:w-96 min-[894px]:h-96 grayscale hover:grayscale-0" 
+              src={fotoEjemplo} 
+              width={1920} 
+              height={1536} 
+              alt=''
+            />
             <div className="border-b-[1px] border-[--color2] mb-10 mx-2
                             min-[894px]:hidden">
                 <h1 className="uppercase text-5xl animate__animated animate__fadeIn animate__delay-2s">{title}</h1>
