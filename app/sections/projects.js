@@ -1,17 +1,12 @@
 import {Element} from 'react-scroll';
 import Project from '../components/card/project';
-import ProjectInvert from '../components/card/projectInvert';
 
 export default function ProjectsPage({isVisible,isVisible1,isVisible2,isVisible3}){
-    const fotoEjemplo = 'https://assets-global.website-files.com/65bf99434e8a00ec776f7cdc/65bf9afc13cac7610082a84e_rodion-kutsaiev-6W8H4puOJB0-unsplash.jpg';
-    const project1 = 'https://drive.google.com/uc?id=1IrqIKek3r-ZKcefbLeFlseXWGD7k5Lre';
-    const project1_1 = '';
-
     return <Element name='projects' id='projects' className='bg-[--color3]'>
         <header className="mx-2 bg-[--color3] pt-4
                            md:mx-[10%] text-[--color2]">
-            <main className="grid grid-cols-1 grid-rows-[150px_1100px_1000px_1000px] font-montserrat justify-items-center
-                            min-[894px]:grid-rows-[100px_600px_600px_600px] min-[894px]:py-10">
+            <main className="grid grid-cols-1 grid-rows-[auto_auto_auto_auto] font-montserrat justify-items-center
+                            min-[894px]:grid-rows-[auto_auto_auto_auto] min-[894px]:py-10">
                 <header className="container row-start-1 row-end-1
                                     min-[894px]:mx-0 min-[894px]:justify-self-start">
                     <h1 className={`mt-14 min-[894px]:mt-4 font-montserrat font-medium uppercase text-min-[894px] animate-showText transition-all ease duration-300 delay-100 ${
@@ -38,7 +33,7 @@ export default function ProjectsPage({isVisible,isVisible1,isVisible2,isVisible3
                                     min-[894px]:justify-center min-[894px]:items-center min-[894px]:justify-self-end min-[894px]:w-full min-[894px]:h-full ${
                                         isVisible1 ? 'animate__animated animate__fadeInUp' : 'opacity-0'
                                       } transition-all duration-500`}>
-                    <ProjectInvert title='4Pilares' 
+                    <Project title='4Pilares' 
                              subtitle='Google pages' 
                              description='This page was the result of a collaboration with a small volleyball club in my area to which I belonged. They needed a "Letter of Introduction" to share their passion for teaching and the love these people feel for this beautiful sport. When looking for a proposal that does not involve a paid monthly fee, the idea of ​​developing the page on "Google Pages" arose.'
                              imageProp='https://drive.google.com/uc?id=1ah4niKWodBk0nSUBvl2xPyoz3rSbafre'
@@ -48,6 +43,7 @@ export default function ProjectsPage({isVisible,isVisible1,isVisible2,isVisible3
                              linkGithub=''
                              linkVercel=''
                              linkPage='https://sites.google.com/view/4pilaresvoley/home'
+                             reverse
                              />
                 </article>
                 <article className={`container row-start-4 row-end-4 my-4 animate-showText transition-all ease duration-300 delay-100

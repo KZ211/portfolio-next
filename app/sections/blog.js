@@ -1,30 +1,12 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
 import {Element} from 'react-scroll';
 import Card from '../components/card/card';
 
-export default function BlogPage(){
-    const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-
-      const threshold = 800;
-
-      setIsVisible(scrollY > threshold ? true : false);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+export default function BlogPage({isVisible}){
 
     return <Element name='blog' id='blog' className='bg-[--color5]'>
-        <div id='about' className="mx-2 max-w-[90rem] py-14 md:mx-[10%] bg-[--color5]">
+        <div className="mx-2 max-w-[90rem] py-14 md:mx-[10%] bg-[--color5]">
     <div className={`font-monserrat pb-10 zIndex  ${isVisible ? 'animate__animated animate__fadeIn' : 'animate__animated animate__fadeOut'} transition-all duration-500`}>
         <div className="mt-5 self-center grid-row-span-1 row-start-1 row-end-1">
         <div className="container overflow-hidden">

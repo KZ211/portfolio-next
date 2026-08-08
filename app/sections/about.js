@@ -3,7 +3,7 @@ import {Element} from 'react-scroll';
 export default function AboutPage({isVisible, isVisible2}){
 
     return <Element name='about' id='about' className='bg-[--color2]'>  
-    <div id='about' className="mx-2 max-w-[90rem] bg-[--color2]
+    <div className="mx-2 max-w-[90rem] bg-[--color2]
                                min-[894px]:flex md:mx-[10%]">
     <div className='font-monserrat pb-10 grid grid-rows-[100px_250px_380px_380px] grid-cols-1 zIndex
                     min-[425px]:grid-rows-[100px_200px_300px_300px]

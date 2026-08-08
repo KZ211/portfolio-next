@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import {Link} from 'react-scroll';
 
-import classes from './nav-var.module.css';
+import classes from './navbar.module.css';
 import 'animate.css';
 
 export default function NavBar(){
