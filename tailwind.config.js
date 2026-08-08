@@ -12,11 +12,11 @@ module.exports = {
       'mono': ['ui-monospace', 'SFMono-Regular', ],
       'display': ['Oswald', ],
       'body': ['"Open Sans"', ],
-      'montserrat': ["Montserrat", 'sans-serif'],
+      'montserrat': ["var(--font-montserrat)", 'sans-serif'],
     },
     extend: {
       fontFamily: {
-        'monserrat': ["Montserrat", 'sans-serif'],
+        'monserrat': ["var(--font-montserrat)", 'sans-serif'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

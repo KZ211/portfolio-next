@@ -1,5 +1,8 @@
+import { Montserrat } from "next/font/google";
 import "../globals.css";
-import NavBar from "./components/navbar/nav-var";
+import NavBar from "./components/navbar/navbar";
+
+const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
 
 export const metadata = {
   title: "Alexis Jares",
@@ -10,7 +13,7 @@ export default function RootLayout({ children }) {
   
   return (
       <html lang="en">
-          <body className="bg-[--color1] ::-webkit-scrollbar ::-webkit-scrollbar-track ::-webkit-scrollbar-thumb .scrollbar-track .scrollbar-thumb overflow-x-hidden">
+          <body className={`${montserrat.variable} bg-[--color1] overflow-x-hidden`}>
             <NavBar/>
             {children}
           </body>

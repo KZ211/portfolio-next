@@ -1,34 +1,10 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
 import {Element} from 'react-scroll';
 import Image from "next/image";
 import 'animate.css';
 
-export default function HomePage(){
-
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Calcula la posición del scroll
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-
-      // Define el umbral de visibilidad (ajústalo según sea necesario)
-      const threshold = 300;
-
-      // Activa la visibilidad cuando el usuario ha hecho scroll más allá del umbral
-      setIsVisible(scrollY > threshold);
-    };
-
-    // Agrega un evento de escucha al scroll
-    window.addEventListener('scroll', handleScroll);
-
-    // Limpia el evento de escucha al desmontar el componente
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+export default function HomePage({isVisible}){
 
   return <Element name='home' id='home'>
     <div className='font-monserrat pt-10 grid zIndex max-w-[90rem] bg-[--color1]
