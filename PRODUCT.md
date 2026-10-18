@@ -38,7 +38,7 @@ Four things together, which a similar-stack candidate could not truthfully copy:
 - Project and job links are buttons with `active: true/false`; a disabled link states why (private repo, in progress, no-code).
 - No backend and no database: contact opens the visitor's email app with the message filled in.
 - Client names from the Anfibia work (Hospital Posadas, Oxitesa, Sedit & Proyectar) may be shown publicly.
-- Open: a downloadable CV. It may only ship as a version **without** the references section; waiting on that PDF from Alexis.
+- No downloadable CV on the site (decided against it). If one is ever added, it must be a version **without** the references section.
 - Not shown publicly: phone number, and the names and phone numbers of references.
 
 ## Brand Commitments
@@ -52,7 +52,7 @@ Four things together, which a similar-stack candidate could not truthfully copy:
 
 - Work history (from the CV): HEL-ALI (freelance, May 2025 – present), Anfibia (Dec 2025 – May 2026), UTN centro de e-learning / Tuten Globals (Apr 2024 – Apr 2025).
 - Live references: https://hel-ali.com/, https://utnba.centrodeelearning.com/, https://next-level-food-eight.vercel.app/, https://sites.google.com/view/4pilaresvoley/home.
-- Repositories: https://github.com/AlexisJares/nextLevelFood, https://github.com/rosana-colman/rosana-couching-page; profile https://github.com/KZ211 (two GitHub accounts in use).
+- Repositories: https://github.com/AlexisJares/nextLevelFood, https://github.com/rosana-colman/rosana-couching-page. The profile shown on the site is https://github.com/KZ211; repos stay linked to whichever account actually holds them (some live on KZ211, others on AlexisJares).
 - Education: Computer Engineering at UNTREF (March 2023 – present); certifications in logical thinking, software engineering, databases, software architecture, Next.js and React, frontend development, Git and GitHub, development with Claude Code; intermediate English; graphic design.
 - Images in `public/images/`: whiteboard photo (1156×521, low resolution), portrait (588×576), project screenshots (HEL-ALI, Rosana Colman, NextLevel Food, 4 Pilares Voley).
 - Absent, must not be fabricated: testimonials, client quotes, metrics beyond the CV's "50% faster development", company logos, screenshots or demos of the private Anfibia apps and the UTN chatbot, video of the work.
