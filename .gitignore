@@ -42,3 +42,8 @@ AGENTS.md
 # design tooling output
 .taste-skill/
 .playwright-mcp/
+
+# local AI tooling
+.gemini/
+GEMINI.md
+graphify-out/
