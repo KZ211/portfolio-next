@@ -1,51 +1,123 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Colour tokens. The brand bars come from the AJ logo; everything else is
+   a neutral ground and ink. Tailwind exposes them as bg-paper, text-ink,
+   bg-brand-green, etc. (tailwind.config.js). */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --color1: #FFFFFF;
-  --color2: #000000;
-  --color3: #FFFFFF;
-  --color4: #1A2134;
-  --color5: #02853F;
-  --color6: #257DCF;
-  --color7: #86171b;
+  --paper: #f3f4f5;
+  --surface: #ffffff;
+  --surface-2: #e4e6e9;
+  --ink: #0b0c0e;
+  --muted: #4a4f57;
+  --brand-blue: #257dcf;
+  --brand-blue-strong: #1d66ad;
+  --brand-green: #02853f;
+  --brand-red: #86171b;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  --paper: #0d0e10;
+  --surface: #17191c;
+  --surface-2: #25282d;
+  --ink: #eeeff1;
+  --muted: #a9afb8;
+  --brand-blue: #4a9fef;
+  --brand-red: #a3242a;
+  color-scheme: dark;
 }
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 1.125rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  section[id] {
+    scroll-margin-top: 64px;
+  }
+  :focus-visible {
+    outline: 3px solid var(--brand-blue);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--brand-blue);
+    color: #fff;
   }
 }
 
-::-webkit-scrollbar {
-  width: 8px; 
-  height: 4px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
-::-webkit-scrollbar-thumb {
-  background: #a5a5a5; 
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-.scrollbar-track {
-  background-color: #f1f1f1;
-}
-.scrollbar-thumb {
-  background-color: #888; 
-}
-.scrollbar-thumb:hover {
-  background-color: #555;
+@layer components {
+  /* Shared press feedback for links and buttons. */
+  .press:hover {
+    transform: translateY(-2px);
+  }
+  .press:active {
+    transform: translateY(1px) scale(0.98);
+  }
+
+  /* Section entrances: see app/components/ui/reveal.js. */
+  .js .reveal [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .js .reveal[data-shown] [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.7s var(--ease-out),
+      transform 0.7s var(--ease-out);
+    transition-delay: calc(var(--d, 0) * 80ms);
+  }
+
+  /* Hero photographs crossfade; the stripe bars rise in on load. */
+  .crossfade {
+    transition: opacity 1.6s ease-in-out;
+  }
+  .drift {
+    animation: drift 24s ease-in-out infinite alternate;
+  }
+  .stripe-bar {
+    transform-origin: left;
+    animation: bar-in 0.7s var(--ease-out) both;
+    animation-delay: calc(0.2s + var(--i) * 0.18s);
+  }
+  @keyframes drift {
+    to {
+      transform: scale(1.08);
+    }
+  }
+  @keyframes bar-in {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .js .reveal [data-reveal],
+    .js .reveal[data-shown] [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.3s;
+    }
+    .drift,
+    .stripe-bar {
+      animation: none;
+    }
+    .press:hover,
+    .press:active {
+      transform: none;
+    }
+  }
 }

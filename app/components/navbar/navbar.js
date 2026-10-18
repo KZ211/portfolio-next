@@ -1,67 +1,114 @@
 'use client';
 
-import Image from "next/image";
-//import Link from "next/link";
-import { useState } from "react";
-import {Link} from 'react-scroll';
+import { useEffect, useRef, useState } from 'react';
+import { LuSun, LuMoon, LuMenu, LuX } from 'react-icons/lu';
+import Logo from '../ui/logo';
+import { useLanguage } from '../../context/LanguageContext';
+import { useTheme } from '../../context/ThemeContext';
 
-import classes from './navbar.module.css';
-import 'animate.css';
+export const SECTIONS = ['experience', 'work', 'stack', 'about', 'notes', 'contact'];
 
-export default function NavBar(){
-    const [currentState, setCurrentState] = useState(true);
-    const [inicializated, setInicializated] = useState(false);
+export default function NavBar() {
+  const [open, setOpen] = useState(false);
+  const { t, lang, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+  const toggleRef = useRef(null);
+  const menuRef = useRef(null);
+  const close = () => setOpen(false);
 
-    function changeHandler(event){
-        currentState == true ? setCurrentState(false):setCurrentState(true);
-        setInicializated(true);
-    }
+  // While the phone menu is open: focus its first link, keep the page behind
+  // it still, close on Escape (focus back on the toggle) and close if the
+  // window grows to the desktop layout.
+  useEffect(() => {
+    if (!open) return;
+    menuRef.current?.querySelector('a')?.focus();
+    const root = document.documentElement;
+    root.style.overflow = 'hidden';
+    const onKey = (event) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const onWide = (event) => event.matches && setOpen(false);
+    document.addEventListener('keydown', onKey);
+    desktop.addEventListener('change', onWide);
+    return () => {
+      root.style.overflow = '';
+      document.removeEventListener('keydown', onKey);
+      desktop.removeEventListener('change', onWide);
+    };
+  }, [open]);
 
-    const logoImage = 'https://drive.google.com/uc?id=1e_QEjOcdA2x94YY09z4wCyEJ3SIvq3Gk';
-    return <div className="h-16 w-full bg-[--color1] pt-0 top-0 bottom-auto left-0 right-0 fixed z-10 border-b-2
-                            md:mx-0">
-        <div className="flex justify-between items-center md:mx-[10%]">
-            <div className="inline-block max-w-full">
-                <Link to='home' smooth duration={500} className="max-w-full inline-block cursor-pointer">
-                    <Image className="max-w-full align-middle inline-block mt-2 w-auto h-auto saturate-150" 
-                    src={logoImage} alt='Logo' width={55} height={30} priority/>
-                </Link>
-            </div>
-            <div className="cursor-pointer block mt-5 mr-3" onClick={changeHandler}>
-                    <div className={`${inicializated == true ? `w-10 h-px mb-1 bg-black transition-transform ease-in-out duration-300 ${currentState ? 'rotate-45 translate-y-1 animate-mergeAndRotateTopOut' : 'animate-mergeAndRotateTop'}` : 'w-10 h-px mb-1 bg-black'}`}/>
-                    <div className={`${inicializated == true ? `w-10 h-px mb-1 bg-black transition-transform ease-in-out duration-300 ${currentState ? 'rotate-45 animate-mergeAndRotateMidOut' : 'animate-mergeAndRotateMid'}` : 'w-10 h-px mb-1 bg-black'}`}/>
-                    <div className={`${inicializated == true ? `w-10 h-px mb-1 bg-black transition-transform ease-in-out duration-300 ${currentState ? '-rotate-45 -translate-y-1 animate-mergeAndRotateBottomOut' : 'animate-mergeAndRotateBottom'}` : 'w-10 h-px mb-1 bg-black'}`}/>
-            </div>
+  return (
+    <header className="fixed inset-x-0 top-0 z-20 bg-paper">
+      <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-ink focus:px-3 focus:py-2 focus:text-paper">
+        {t.meta.skip}
+      </a>
+      <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-6 px-4 md:px-8">
+        <a href="#home" onClick={close} className="press grid min-h-11 shrink-0 place-items-center" aria-label={t.nav.home}>
+          <Logo className="h-8 w-auto" />
+        </a>
+
+        <nav className="ml-auto hidden lg:block" aria-label={t.nav.main}>
+          <ul className="flex gap-7 text-small font-medium">
+            {SECTIONS.slice(0, 4).map((id) => (
+              <li key={id}>
+                <a href={`#${id}`} className="py-2 transition-colors hover:text-brand-blue">
+                  {t.nav[id]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="ml-auto flex items-center gap-1 lg:ml-0">
+          <button
+            onClick={toggleLanguage}
+            aria-label={t.nav.language}
+            lang={lang === 'en' ? 'es' : 'en'}
+            className="press min-h-11 min-w-11 text-small font-semibold"
+          >
+            {lang === 'en' ? 'ES' : 'EN'}
+          </button>
+          <button onClick={toggleTheme} aria-label={t.nav.theme} className="press grid min-h-11 min-w-11 place-items-center">
+            {theme === 'light' ? <LuMoon size={18} aria-hidden="true" /> : <LuSun size={18} aria-hidden="true" />}
+          </button>
+          <a href="#contact" className="press ml-2 hidden bg-brand-red px-4 py-2.5 text-small font-semibold text-white sm:inline-block">
+            {t.nav.contact}
+          </a>
+          <button
+            ref={toggleRef}
+            onClick={() => setOpen(!open)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? t.nav.close : t.nav.menu}
+            className="press grid min-h-11 min-w-11 place-items-center lg:hidden"
+          >
+            {open ? <LuX size={22} aria-hidden="true" /> : <LuMenu size={22} aria-hidden="true" />}
+          </button>
         </div>
-        <div className={`${inicializated == true ? `${currentState == true ? ` animate-fadeOutLeft ${classes.active}` : 'animate-fadeInLeft'} ${currentState == true ? classes.navmenu : classes.active}` : 'hidden'}`}>
-            <nav className=" w-[380px] max-w-6xl flex flex-row flex-wrap mt-0 mx-auto text-center">
-                <ul className=" w-full h-full font-montserrat font-[400]">
-                    <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText hover:border-{}-2 border-black"}` : ''}`}>
-                        <Link to='home' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[327px]:text-6xl min-[396px]:text-7xl cursor-pointer">
-                            Home
-                            <span className="bg-black h-[1px] w-[232px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
-                        </Link>
-                    </li>
-                    <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link to='about' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[327px]:text-6xl min-[396px]:text-7xl cursor-pointer">
-                            About
-                            <span className="bg-black h-[1px] w-[270px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
-                        </Link>
-                    </li>
-                    <li className={`${inicializated == true ? `max-w-[189,72px] inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link to='blog' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[396px]:text-7xl cursor-pointer">
-                            Blog
-                            <span className="bg-black h-[1px] w-[200px] -translate-x-80 group-hover:translate-x-0 transition-all ease duration-200"/>
-                        </Link>
-                    </li>
-                    <li className={`${inicializated == true ? `max-w-full inline-block mt-5 mb-2 ${currentState == true ? 'animate-hiddenText' : "animate-showText"}` : ''}`}>
-                        <Link to='projects' smooth duration={500} onClick={changeHandler} className="flex flex-wrap justify-center uppercase group text-6xl min-[327px]:text-6xl min-[396px]:text-7xl cursor-pointer">
-                            Projects
-                            <span className="bg-black h-[1px] w-[370px] -translate-x-96 group-hover:translate-x-0 transition-all ease duration-200"/>
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+      </div>
+
+      {open && (
+        <nav
+          ref={menuRef}
+          id="mobile-menu"
+          aria-label={t.nav.main}
+          className="max-h-[calc(100svh-4rem)] overflow-y-auto overscroll-contain bg-paper px-4 pb-8 shadow-lg lg:hidden" /* taste-skill-ignore: open menu floats over the page */
+        >
+          <ul className="flex flex-col">
+            {SECTIONS.map((id) => (
+              <li key={id}>
+                <a href={`#${id}`} onClick={close} className="block py-3 text-display-narrow font-bold leading-tight tracking-[-0.03em]">
+                  {t.nav[id]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+    </header>
+  );
 }
