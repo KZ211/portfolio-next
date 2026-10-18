@@ -1,87 +1,98 @@
 'use client';
 
-import {Element} from 'react-scroll';
-import Image from "next/image";
-import 'animate.css';
+import { useEffect, useState } from 'react';
+import { LuPause, LuPlay } from 'react-icons/lu';
+import Image from 'next/image';
+import Logo from '../components/ui/logo';
+import Stripe from '../components/ui/stripe';
+import { LinkButtons } from '../components/ui/linkButton';
+import { useLanguage } from '../context/LanguageContext';
+import { profile } from '../data/profile';
 
-export default function HomePage({isVisible}){
+// `sizes` accounts for object-cover: the frame is taller than it is wide, so
+// the wide whiteboard photo must be fetched far wider than the frame to fill
+// its height (about 1.3× the viewport on desktop, 1.7× on a phone).
+const PHOTOS = [
+  { src: '/images/whiteboard-hd.jpg', altKey: 'photoAlt', position: '52% 50%', sizes: '(min-width: 1024px) 130vw, 170vw' },
+  { src: '/images/portrait-hd.jpg', altKey: 'portraitAlt', position: '50% 30%', sizes: '(min-width: 1024px) 60vw, 100vw' },
+];
 
-  return <Element name='home' id='home'>
-    <div className='font-monserrat pt-10 grid zIndex max-w-[90rem] bg-[--color1]
-                            grid-rows-[130px_130px_200px_260px] grid-cols-1 mx-2
-                            md:grid-rows-[100px_180px] md:grid-cols-2 md:pt-20 md:mx-[10%] md:pb-10
-                            lg:grid-rows-[130px_210px] lg:pb-10
-                            xl:grid-rows-[150px_260px] xl:pb-10
-                            2xl:grid-rows-[200px_300px]
-                            '>
-        
-        <div className="self-end grid-row-span-1
-                        md:flex md:content-center md:flex-wrap md:w-full md:h-full">
-        
-        <div className="container overflow-hidden min-w-full
-                        md:flex md:justify-start">
-        
-            <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 select-none text-[--color2]
-                            sm:text-[100px]
-                            md:text-[80px] md:mr-4
-                            min-[901px]:text-[90px]
-                            lg:text-[100px] lg:font-[600]
-                            min-[1086px]:text-[110px]
-                            min-[1174px]:text-[130px]
-                            xl:text-[125px] xl:tracking-widest
-                            min-[1574px]:text-[145px]
-                            2xl:text-[150px] 
-                            min-[1770px]:text-[170px]">Alexis</h1>
+// Crossfades the hero photographs every six seconds; stops while the tab is
+// hidden or the visitor pauses it, and stays on the first photo under
+// reduced motion (no pause control is shown then, nothing moves).
+function useSlideshow(length, interval = 6000) {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [still, setStill] = useState(true);
+  useEffect(() => {
+    setStill(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }, []);
+  useEffect(() => {
+    if (still || paused) return;
+    const id = setInterval(() => {
+      if (!document.hidden) setIndex((i) => (i + 1) % length);
+    }, interval);
+    return () => clearInterval(id);
+  }, [length, interval, still, paused]);
+  return { index, paused, still, toggle: () => setPaused((p) => !p) };
+}
+
+export default function HomePage() {
+  const { t } = useLanguage();
+  const { index: active, paused, still, toggle } = useSlideshow(PHOTOS.length);
+  const links = [...profile.links, { type: 'email', url: `mailto:${profile.email}`, active: true }];
+
+  // The text comes first in the markup so it is read (and tabbed) before the
+  // photo and its pause button; `order` puts the photo on top on a phone and
+  // on the right on desktop.
+  return (
+    <section id="home" className="flex flex-col px-3 pb-3 pt-[76px] lg:grid lg:h-[100svh] lg:min-h-[680px] lg:grid-cols-2 lg:gap-3">
+      <div className="relative z-[1] order-2 mx-3 -mt-6 flex flex-col bg-surface lg:order-1 lg:mx-0 lg:mt-0">
+        <Stripe className="h-3 lg:h-4" />
+        <div className="flex flex-1 flex-col items-center justify-center px-5 py-8 text-center md:px-10 lg:py-12">
+          <Logo className="hidden w-32 lg:block" />
+          <h1 className="text-hero lg:mt-8 font-bold leading-[0.95] tracking-[-0.04em]">
+            {t.home.line1}
+          </h1>
+          <p className="mt-3 text-heading font-medium leading-tight tracking-[-0.02em]">
+            {t.home.line2}
+          </p>
+          <p className="mt-4 max-w-[42ch] lg:mt-6">{t.home.intro}</p>
+          <a
+            href="#work"
+            className="press mt-6 inline-flex min-h-12 items-center bg-ink px-6 text-body font-semibold text-paper lg:mt-8"
+          >
+            {t.home.cta}
+          </a>
+          <LinkButtons links={links} className="mt-6 justify-center lg:mt-8" />
         </div>
-        </div>
-        <div className="self-start grid-row-span-1 
-                        md:flex md:content-center md:flex-wrap md:w-full md:h-full">
-        
-        <div className="container overflow-hidden
-                        md:flex md:justify-end">
-        
-            <h1 className="text-[50px] font-bold uppercase my-0 animate-showText transition-all ease duration-300 delay-100 select-none text-[--color2]
-                            sm:text-[100px]
-                            md:text-[80px] md:ml-4
-                            min-[901px]:text-[90px]
-                            lg:text-[100px] lg:font-[600]
-                            min-[1086px]:text-[110px]
-                            min-[1174px]:text-[130px]
-                            xl:text-[125px] xl:tracking-widest
-                            min-[1574px]:text-[145px]
-                            2xl:text-[150px] 
-                            min-[1770px]:text-[170px]">Jares</h1>
-        </div>
-        </div>
-    <div className="self-start grid-row-span-1 row-start-3 row-end-3 
-                    
-                    md:row-start-2 md:row-end-2 md:col-start-2 md:col-end-2
-                    md:flex md:justify-end md:content-center md:flex-wrap md:w-full md:h-full">
-      
-      <div className="container flex flex-wrap row-start-3 row-end-3 col-start-2 col-end-2 text-md max-w-lg animate__animated animate__fadeIn animate__delay-2s
-                      sm:text-xl sm:max-w-2xl
-                      md:content-center md:text-xs md:ml-3
-                      lg:text-[17px] 
-                      xl:text-lg">
-      
-        <p className="uppercase font-[400] text-[--color2] mb-8 md:mb-8 lg:mb-8 xl:mb-10">I&apos;m a Computer Engineering student at the &quot;Universidad De Tres de Febrero&quot; (UNTREF) and a web developer. Technology has been my passion since I was very young, which is why I&apos;ve sacrificed everything to work in a field that i adore.</p>
-        <p className="uppercase font-[400] underline text-lg text-[--color2]"> Full-Stack Developer / AI App Integration </p>
       </div>
-    </div>
-    <div className="grid-row-span-1
-                    sm:justify-self-start
-                    md:row-start-2 md:row-end-2">
-    
-      <div className="row-start-2 row-end-2 col-span-2 container w-full h-full inline
-                      ">
-        <Image className="animate-showText transition-all ease duration-300 delay-100 rounded-lg
-                          sm:w-[700px] sm:h-[300px]
-                          md:h-[180px] md:w-full
-                          lg:h-[245px]
-                          xl:h-[260px]
-                          2xl:h-[300px]" src='https://drive.google.com/uc?id=1X0TFJ_BVjrxGbVa75jp4Sayp8jDkZfJ_' width={1000} height={200} alt="Alexis sosteniendo un fibron frente a un pizzarron explicando algo a sus 3 compañeros"/>
+
+      <div className="relative order-1 h-[30svh] overflow-hidden bg-surface-2 md:h-[44svh] lg:order-2 lg:h-full">
+        {PHOTOS.map((photo, i) => (
+          <Image
+            key={photo.src}
+            src={photo.src}
+            alt={t.home[photo.altKey]}
+            fill
+            priority={i === 0}
+            sizes={photo.sizes}
+            className={`crossfade drift object-cover ${paused ? '[animation-play-state:paused]' : ''} ${i === active ? 'opacity-100' : 'opacity-0'}`}
+            style={{ objectPosition: photo.position }}
+            aria-hidden={i !== active}
+          />
+        ))}
+        {!still && (
+          <button
+            type="button"
+            onClick={toggle}
+            aria-label={paused ? t.home.play : t.home.pause}
+            className="press absolute bottom-3 right-3 grid min-h-11 min-w-11 place-items-center bg-paper text-ink max-lg:bottom-9"
+          >
+            {paused ? <LuPlay size={18} aria-hidden="true" /> : <LuPause size={18} aria-hidden="true" />}
+          </button>
+        )}
       </div>
-    </div>
-  </div>
-  </Element>
+    </section>
+  );
 }

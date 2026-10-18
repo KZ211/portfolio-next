@@ -1,107 +1,36 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./app/**/*.{js,jsx,mdx}'],
+  darkMode: 'class',
   theme: {
-    fontFamily: {
-      'sans': ['ui-sans-serif', 'system-ui', ],
-      'serif': ['ui-serif', 'Georgia', ],
-      'mono': ['ui-monospace', 'SFMono-Regular', ],
-      'display': ['Oswald', ],
-      'body': ['"Open Sans"', ],
-      'montserrat': ["var(--font-montserrat)", 'sans-serif'],
-    },
     extend: {
       fontFamily: {
-        'monserrat': ["var(--font-montserrat)", 'sans-serif'],
+        sans: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      // Type steps, in rem so they follow the visitor's browser font size.
+      // Size only: each use sets its own leading and tracking.
+      fontSize: {
+        small: '0.9375rem', // 15px
+        body: '1.125rem', // 18px
+        heading: 'clamp(1.5rem, 2.2vw, 1.875rem)', // 24–30px
+        display: 'clamp(2.75rem, 5.4vw, 5.25rem)', // 44–84px
+        'display-narrow': 'clamp(2.75rem, 9.5vw, 5.25rem)', // phone menu and project names
+        menu: 'clamp(2.75rem, 4.2vw, 4rem)', // footer menu
+        hero: 'clamp(3rem, 7.4vw, 7.5rem)', // 48–120px
       },
-      keyframes: {
-        mergeAndRotateTop: {
-          '50%': { transform: 'translateY(5px)' },
-          '100%': { transform: 'translateY(5px) rotate(45deg)' }
-        },
-        mergeAndRotateTopOut: {
-          '50%': { transform: 'rotate(0deg) translateY(6px)'},
-          '100%': { transform: 'translateY(0px) rotate(0deg)' }
-        },
-        mergeAndRotateMid: {
-          '50%': { transform: 'translateY(0px)' },
-          '100%': { transform: 'translateY(0) rotate(45deg)' }
-        },
-        mergeAndRotateMidOut: {
-          '50%': { transform: 'rotate(0px)' },
-          '100%': { transform: 'translateY(0) rotate(0deg)' }
-        },
-        mergeAndRotateBottom: {
-          '50%': { transform: 'translateY(-5px)' },
-          '100%': { transform: 'translateY(-6px) rotate(-45deg)'}
-        },
-        mergeAndRotateBottomOut: {
-          '50%': { transform: 'rotate(0) translateY(-5px)' },
-          '100%': { transform: 'translateY(0px) rotate(0deg)'}
-        },
-        hiddenText: {
-          '0%': { clipPath: 'inset(0 0 0 0)' },
-          '100%': { clipPath: 'inset(0 0 100% 0)', transform: 'translateY(60px)' },
-        },
-        showText: {
-          '0%': { clipPath: 'inset(0 0 100% 0)', transform: 'translateY(60px)' },
-          '50%': { clipPath: 'inset(0 0 100% 0)', transform: 'translateY(60px)' },
-          '100%': { clipPath: 'inset(0 0 0 0)', transform: 'translateY(0px)' },
-        },
-        fadeInLeft: {
-          from: {
-            opacity: 0,
-            transform: 'translate3d(-100%, 0, 0)',
-          },
-          to: {
-            opacity: 1,
-            transform: 'translate3d(0, 0, 0)',
-          },
-        },
-        fadeOutLeft: {
-          from: {
-            opacity: 1,
-            transform: 'translate3d(0, 0, 0)',
-          },
-          to: {
-            opacity: 0,
-            transform: 'translate3d(-100%, 0, 0)',
-          },
-        },
-        showLine: {
-          '0%': { transform: 'translateX(0px)' },
-          '50%': { transform: 'translateX(0px)' },
-          '100%': { transform: 'translateX(64px)' },
-        },
+      // Theme tokens defined in globals.css.
+      colors: {
+        paper: 'var(--paper)',
+        surface: 'var(--surface)',
+        'surface-2': 'var(--surface-2)',
+        ink: 'var(--ink)',
+        muted: 'var(--muted)',
+        'brand-blue': 'var(--brand-blue)',
+        'brand-blue-strong': 'var(--brand-blue-strong)',
+        'brand-green': 'var(--brand-green)',
+        'brand-red': 'var(--brand-red)',
       },
-      animation: {
-        mergeAndRotateTop: 'mergeAndRotateTop 0.4s ease-in-out forwards',
-        mergeAndRotateTopOut: 'mergeAndRotateTopOut 0.7s ease-in-out forwards',
-        mergeAndRotateMid: 'mergeAndRotateMid 0.4s ease-in-out forwards',
-        mergeAndRotateMidOut: 'mergeAndRotateMidOut 0.4s ease-in-out forwards',
-        mergeAndRotateBottom: 'mergeAndRotateBottom 0.4s ease-in-out forwards',
-        mergeAndRotateBottomOut: 'mergeAndRotateBottomOut 0.7s ease-in-out forwards',
-        hiddenText: 'hiddenText 0.5s ease-in-out forwards',
-        showText: 'showText 1s ease-in-out forwards',
-        fadeInLeft: 'fadeInLeft 0.5s ease-out',
-        fadeOutLeft: 'fadeOutLeft 1s ease-out forwards 0.5s',
-        showLine: 'showLine 1s ease-out forwards 0.5s'
-      }
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-  corePlugins: {
-    transition: true,
-  },
+  plugins: [],
 };
