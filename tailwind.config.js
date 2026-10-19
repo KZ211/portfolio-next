@@ -29,6 +29,7 @@ module.exports = {
         'brand-blue-strong': 'var(--brand-blue-strong)',
         'brand-green': 'var(--brand-green)',
         'brand-red': 'var(--brand-red)',
+        rule: 'var(--rule)',
       },
     },
   },

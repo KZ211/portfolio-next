@@ -9,7 +9,17 @@ export default function ExperiencePage() {
   const { t } = useLanguage();
 
   return (
-    <section id="experience" className="bg-surface py-24 lg:py-40">
+    <section id="experience" className="relative bg-surface py-24 lg:py-40">
+      {/* The hero's matrix lines carry on across the seam for a moment: the
+          same columns the heading and intro below sit on. */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 hidden h-28 lg:block">
+        <div className="mx-auto grid h-full max-w-[1440px] grid-cols-12 gap-x-8 px-8">
+          <span className="col-start-1 -ml-4 border-l border-rule" />
+          <span className="col-start-6 -ml-4 border-l border-rule" />
+          <span className="col-start-10 -ml-4 border-l border-rule" />
+          <span className="col-start-12 -mr-4 border-r border-rule" />
+        </div>
+      </div>
       <div className="mx-auto max-w-[1440px] px-4 md:px-8">
         <Reveal className="mb-14 grid gap-4 lg:mb-20 lg:grid-cols-12 lg:gap-8">
           <h2 data-reveal className="text-display font-bold leading-none tracking-[-0.04em] lg:col-span-5">

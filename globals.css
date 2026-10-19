@@ -15,11 +15,15 @@
   --brand-blue-strong: #1d66ad;
   --brand-green: #02853f;
   --brand-red: #86171b;
+  --rule: #0b0c0e2e;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   color-scheme: light;
 }
 
-.dark {
+/* `.theme-dark` gives a subtree the dark tokens whatever the site theme:
+   the hero is always dark. It restates `color` so text under it re-inks. */
+.dark,
+.theme-dark {
   --paper: #0d0e10;
   --surface: #17191c;
   --surface-2: #25282d;
@@ -27,7 +31,19 @@
   --muted: #a9afb8;
   --brand-blue: #4a9fef;
   --brand-red: #a3242a;
+  --rule: #eeeff140;
   color-scheme: dark;
+}
+
+.theme-dark {
+  color: var(--ink);
+  /* Ground the hero resolves to at the end of its scroll beat: the dark
+     paper, or the next section's surface when the whole site is dark so the
+     seam disappears. */
+  --hero-end: var(--paper);
+}
+.dark .theme-dark {
+  --hero-end: var(--surface);
 }
 
 @layer base {
@@ -98,6 +114,132 @@
   @keyframes bar-in {
     from {
       transform: scaleX(0);
+    }
+  }
+
+  /* Hero "pizarra" (app/sections/home.js). The whiteboard photo cut into
+     planes: the plate at the back, the name, the people in front. One scroll
+     progress drives everything: JS writes eased phases (--walk, --fly,
+     --recede, --dim, --settle, --reveal) on the section and every plane reads
+     them here, transform and opacity only. Without JS or with reduced motion
+     none of them is set and the defaults give the static composition. */
+  .hero {
+    height: 100svh;
+    min-height: 640px;
+    background: var(--hero-end);
+  }
+  .hero-stage {
+    position: relative;
+    height: 100svh;
+    min-height: 640px;
+    overflow: hidden;
+    container-type: size;
+  }
+  /* The box the photo covers: the whole stage on desktop, the lower part on
+     a phone so the type sits above the people. */
+  .hero-scene {
+    position: absolute;
+    inset: 44% 0 0 0;
+    container-type: size;
+  }
+  /* Plate and cutout share this box exactly (same size, same offset), so
+     they stay pixel-aligned at rest whatever they scale to. It covers the
+     scene like object-fit: cover, at the photo's 2400:1082 ratio. */
+  .hero-canvas {
+    position: absolute;
+    width: max(100cqw, 221.8cqh);
+    height: max(100cqh, 45.09cqw);
+    left: calc((100cqw - max(100cqw, 221.8cqh)) * var(--ox, 0.6));
+    top: calc((100cqh - max(100cqh, 45.09cqw)) * 0.5);
+    will-change: transform;
+  }
+  /* The camera walks into the matrix drawn on the board: the plate scales
+     around it. Kept dim and soft so the filled-in patches never read. */
+  .hero-plate {
+    transform-origin: 37.5% 25.8%;
+    transform: scale(calc(1 + 0.7 * var(--walk, 0)));
+    filter: brightness(0.5) saturate(0.8) blur(1.5px);
+  }
+  /* The people scale faster and drop past the lens, then are gone. */
+  .hero-team {
+    transform-origin: 50% 62%;
+    transform: translateY(calc(var(--fly, 0) * 14%)) scale(calc(1 + 1.7 * var(--fly, 0)));
+    opacity: calc(1 - var(--fly, 0) * var(--fly, 0));
+    filter: brightness(0.82);
+  }
+  .hero-dim {
+    background: var(--hero-end);
+    opacity: var(--dim, 0);
+  }
+  /* Text protection only where copy sits: a band under the bottom row. */
+  .hero-scrim {
+    background: linear-gradient(to top, var(--paper) 0%, transparent 100%); /* taste-skill-ignore: scrim for legibility */
+    opacity: calc(0.92 - 0.92 * var(--dim, 0));
+  }
+  .hero-name {
+    font-size: clamp(3.5rem, 20vw, 6rem);
+    transform: scale(calc(1 - 0.12 * var(--recede, 0)));
+    transform-origin: 0 100%;
+  }
+  .hero-lines span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    background: var(--ink);
+    transform-origin: 0 0;
+  }
+  .hero-row {
+    transform: translateY(calc(var(--settle, 0) * var(--lift, 0px) * -1));
+  }
+  .hero-later {
+    opacity: var(--reveal, 1);
+    transform: translateY(calc((1 - var(--reveal, 1)) * 24px));
+  }
+  .hero-later:focus-within {
+    opacity: 1;
+  }
+  @media (min-width: 1024px) {
+    .hero-scene {
+      inset: 0;
+    }
+    .hero-canvas {
+      --ox: 0.5;
+    }
+    .hero-name {
+      font-size: clamp(5rem, 10.6vw, 13rem);
+      transform: translateY(calc(var(--recede, 0) * 4cqh)) scale(calc(1 - 0.56 * var(--recede, 0)));
+      transform-origin: 50% 0;
+    }
+    .hero-row {
+      --lift: 22cqh;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero {
+      height: 150svh;
+    }
+    .js .hero-stage {
+      position: sticky;
+      top: 0;
+    }
+    .js .hero-later {
+      opacity: var(--reveal, 0);
+      transform: translateY(calc((1 - var(--reveal, 0)) * 24px));
+    }
+    .js .hero-later:focus-within {
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
+    .js .hero {
+      height: 200svh;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-lines {
+      display: none;
     }
   }
 
