@@ -153,19 +153,17 @@
     top: calc((100cqh - max(100cqh, 45.09cqw)) * 0.5);
     will-change: transform;
   }
-  /* The camera walks into the matrix drawn on the board: the plate scales
-     around it. Kept dim and soft so the filled-in patches never read. */
+  /* The camera walks into the matrix drawn on the board: the plate (the
+     original photo, untouched) scales around it. */
   .hero-plate {
     transform-origin: 37.5% 25.8%;
     transform: scale(calc(1 + 0.7 * var(--walk, 0)));
-    filter: brightness(0.5) saturate(0.8) blur(1.5px);
   }
   /* The people scale faster and drop past the lens, then are gone. */
   .hero-team {
     transform-origin: 50% 62%;
     transform: translateY(calc(var(--fly, 0) * 14%)) scale(calc(1 + 1.7 * var(--fly, 0)));
     opacity: calc(1 - var(--fly, 0) * var(--fly, 0));
-    filter: brightness(0.82);
   }
   .hero-dim {
     background: var(--hero-end);

@@ -7,7 +7,7 @@ import { LinkButtons } from '../components/ui/linkButton';
 import { useLanguage } from '../context/LanguageContext';
 import { profile } from '../data/profile';
 
-// The whiteboard photo is 2400×1082. The plate (people painted out) and the
+// The whiteboard photo is 2400×1082. The plate (the original photo) and the
 // cutout (people only) share that frame, so both are drawn into the same
 // covering box (.hero-canvas in globals.css) and stay aligned at rest.
 // `sizes`: the box is as wide as the viewport or 2.22× the scene height,
@@ -195,13 +195,13 @@ export default function HomePage() {
 
         <div className="hero-scene z-0" aria-hidden="true">
           <div ref={plateRef} className="hero-canvas hero-plate">
-            <Image src="/images/hero/board-plate.jpg" alt="" fill priority sizes={SIZES} />
+            <Image src="/images/whiteboard-hd.jpg" alt="" fill priority sizes={SIZES} />
           </div>
         </div>
         <div className="hero-dim absolute inset-0 z-[1]" />
         <div className="hero-scene z-[3]">
           <div className="hero-canvas hero-team">
-            <Image src="/images/hero/team-cut-matte.webp" alt={t.home.photoAlt} fill priority sizes={SIZES} />
+            <Image src="/images/hero/team-cut.webp" alt={t.home.photoAlt} fill priority sizes={SIZES} />
           </div>
         </div>
         <div className="hero-scrim absolute inset-x-0 bottom-0 top-[58%] z-[4] lg:top-[45%]" />
