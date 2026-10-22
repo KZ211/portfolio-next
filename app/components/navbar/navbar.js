@@ -75,7 +75,7 @@ export default function NavBar() {
           <button onClick={toggleTheme} aria-label={t.nav.theme} className="press grid min-h-11 min-w-11 place-items-center">
             {theme === 'light' ? <LuMoon size={18} aria-hidden="true" /> : <LuSun size={18} aria-hidden="true" />}
           </button>
-          <a href="#contact" className="press ml-2 hidden bg-brand-red px-4 py-2.5 text-small font-semibold text-white sm:inline-block">
+          <a href="#contact" className="press ml-2 hidden min-h-11 items-center bg-brand-red px-4 text-small font-semibold text-white sm:inline-flex">
             {t.nav.contact}
           </a>
           <button

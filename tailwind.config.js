@@ -17,6 +17,10 @@ module.exports = {
         'display-narrow': 'clamp(2.75rem, 9.5vw, 5.25rem)', // phone menu and project names
         menu: 'clamp(2.75rem, 4.2vw, 4rem)', // footer menu
         hero: 'clamp(3rem, 7.4vw, 7.5rem)', // 48–120px
+        // The projects title set behind the stack: phone, then desktop (also
+        // capped by the viewport height so it clears the row that lands).
+        name: 'clamp(4rem, 19vw, 7rem)',
+        'name-wide': 'clamp(5.5rem, min(13vw, (100svh - 500px) * 0.6), 13rem)',
       },
       // Theme tokens defined in globals.css.
       colors: {
@@ -29,6 +33,7 @@ module.exports = {
         'brand-blue-strong': 'var(--brand-blue-strong)',
         'brand-green': 'var(--brand-green)',
         'brand-red': 'var(--brand-red)',
+        rule: 'var(--rule)',
       },
     },
   },

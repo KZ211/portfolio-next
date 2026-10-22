@@ -3,12 +3,13 @@
 import { useRef, useState } from 'react';
 import { LuArrowRight } from 'react-icons/lu';
 import Reveal from '../components/ui/reveal';
-import LinkButton from '../components/ui/linkButton';
+import SocialSlabs from '../components/contact/socialSlabs';
 import { useLanguage } from '../context/LanguageContext';
 import { profile } from '../data/profile';
 
 // One field. Submitting opens the visitor's email app with the message
 // filled in; the form's plain mailto action is the no-JavaScript fallback.
+// Beside it (below it on a phone) the AJ bars open into the social links.
 export default function ContactPage() {
   const { t } = useLanguage();
   const emailRef = useRef(null);
@@ -37,8 +38,8 @@ export default function ContactPage() {
   };
 
   return (
-    <section id="contact" className="px-4 pb-40 pt-48 md:px-8">
-      <Reveal className="mx-auto max-w-[560px]">
+    <section id="contact" className="mx-auto grid max-w-[1440px] gap-16 px-4 pb-32 pt-40 md:px-8 lg:grid-cols-12 lg:items-center lg:gap-8 lg:pb-40 lg:pt-48">
+      <Reveal className="max-w-[560px] lg:col-span-5">
         <h2 data-reveal className="text-heading font-semibold leading-tight tracking-[-0.02em]">
           <span className="block text-muted">{t.contact.prompt1}</span>{' '}
           <span className="block">{t.contact.prompt2}</span>
@@ -79,7 +80,7 @@ export default function ContactPage() {
         <dl data-reveal style={{ '--d': 2 }} className="mt-16 grid gap-6 text-small sm:grid-cols-[auto_1fr] sm:items-center sm:gap-x-8">
           <dt className="text-muted">{t.contact.email}</dt>
           <dd className="-mt-5 flex flex-wrap items-center gap-3 sm:mt-0">
-            <a ref={emailRef} href={`mailto:${profile.email}`} className="break-all font-semibold hover:text-brand-blue">
+            <a ref={emailRef} href={`mailto:${profile.email}`} className="inline-flex min-h-11 items-center break-all font-semibold hover:text-brand-blue">
               {profile.email}
             </a>
             <button type="button" onClick={copyEmail} className="press min-h-11 bg-surface-2 px-3 font-semibold">
@@ -91,14 +92,9 @@ export default function ContactPage() {
           </dd>
           <dt className="text-muted">{t.contact.location}</dt>
           <dd className="-mt-5 font-semibold sm:mt-0">{profile.location}</dd>
-          <dt className="sr-only">{t.contact.links}</dt>
-          <dd className="flex flex-wrap gap-2 sm:col-start-2">
-            {profile.links.map((link) => (
-              <LinkButton key={link.type} {...link} />
-            ))}
-          </dd>
         </dl>
       </Reveal>
+      <SocialSlabs className="lg:col-span-7" />
     </section>
   );
 }

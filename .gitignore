@@ -47,3 +47,6 @@ AGENTS.md
 .gemini/
 GEMINI.md
 graphify-out/
+
+# scroll-craft workspace (briefs, shots)
+scrollcraft/

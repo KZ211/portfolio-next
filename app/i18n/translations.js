@@ -37,8 +37,6 @@ export const translations = {
       cta: 'See my projects',
       photoAlt: 'Alexis at a whiteboard, explaining a matrix exercise to two classmates in the university library',
       portraitAlt: 'Portrait of Alexis smiling, wearing glasses and a black hoodie',
-      pause: 'Pause the photos',
-      play: 'Play the photos',
     },
     experience: {
       title: 'Experience',
@@ -157,8 +155,6 @@ export const translations = {
       cta: 'Ver mis proyectos',
       photoAlt: 'Alexis frente a un pizarrón, explicando un ejercicio de matrices a dos compañeros en la biblioteca de la universidad',
       portraitAlt: 'Retrato de Alexis sonriendo, con anteojos y buzo negro',
-      pause: 'Pausar las fotos',
-      play: 'Reanudar las fotos',
     },
     experience: {
       title: 'Experiencia',
