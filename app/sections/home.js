@@ -34,7 +34,7 @@ const lerp = (a, b, t) => a + (b - a) * t;
 // stage is about to release), turned into eased phases written as CSS
 // custom properties on the section. The planes read them in globals.css.
 // On desktop the same progress drives the hairlines that trace the board's
-// matrix and then open into the grid the copy row settles on.
+// matrix, then open towards the copy row and dissolve as it settles.
 function usePizarra({ sectionRef, stageRef, plateRef, rowRef, linesRef }) {
   useEffect(() => {
     const section = sectionRef.current;
@@ -75,7 +75,9 @@ function usePizarra({ sectionRef, stageRef, plateRef, rowRef, linesRef }) {
     const drawLines = (p, walk) => {
       const trace = clamp((p - 0.16) / 0.14);
       const open = phase(p, 0.42, 0.82);
-      linesRef.current.style.opacity = (trace * (1 - 0.75 * open)).toFixed(3);
+      // They trace the matrix, open towards the copy row and dissolve there,
+      // so no grid is left standing once the row has settled.
+      linesRef.current.style.opacity = (trace * (1 - open)).toFixed(3);
       if (!trace || !geo) return;
       const s = 1 + PLATE_GROWTH * walk;
       const X = MATRIX_X.map((u) => geo.left + geo.ox + (u * geo.k - geo.ox) * s);
@@ -86,9 +88,9 @@ function usePizarra({ sectionRef, stageRef, plateRef, rowRef, linesRef }) {
       const y1 = lerp(Y[3], geo.bottom, open);
       for (let i = 0; i < 4; i += 1) {
         const x = lerp(X[i], geo.xs[i], open);
-        lines[i].style.transform = `translate(${x}px, ${y0}px) scale(1, ${y1 - y0})`;
+        lines[i].style.transform = `translate(${x}px, ${y0}px) scale(1, ${(y1 - y0) / 2})`;
         const y = lerp(Y[i], geo.ys[i], open);
-        lines[i + 4].style.transform = `translate(${x0}px, ${y}px) scale(${x1 - x0}, 1)`;
+        lines[i + 4].style.transform = `translate(${x0}px, ${y}px) scale(${(x1 - x0) / 2}, 1)`;
       }
     };
 
@@ -126,6 +128,7 @@ function usePizarra({ sectionRef, stageRef, plateRef, rowRef, linesRef }) {
 
     const observer = new IntersectionObserver(([entry]) => {
       onScreen = entry.isIntersecting;
+      section.toggleAttribute('data-live', onScreen && motion.matches);
       if (onScreen) schedule();
     });
     observer.observe(section);
@@ -164,8 +167,14 @@ export default function HomePage() {
     <section id="home" ref={sectionRef} className="hero theme-dark relative">
       <div ref={stageRef} className="hero-stage">
         <div className="pointer-events-none absolute inset-0 flex flex-col px-4 pb-6 pt-24 lg:px-0 lg:pb-8 lg:pt-[18cqh]">
-          <h1 className="hero-name relative z-[5] font-bold uppercase leading-[0.86] tracking-[-0.045em] lg:z-[2] lg:whitespace-nowrap lg:text-center">
-            {t.home.line1}
+          {/* On desktop the name starts in marker ink on the white board and
+              turns white as the board dims to black: a white copy drawn by
+              CSS (::after, from data-text) fades in over the dark one. */}
+          <h1
+            data-text={t.home.line1}
+            className="hero-name relative z-[5] grid font-bold uppercase leading-[0.86] tracking-[-0.045em] lg:z-[2] lg:whitespace-nowrap lg:text-center"
+          >
+            <span className="hero-name-ink [grid-area:1/1]">{t.home.line1}</span>
           </h1>
 
           <div

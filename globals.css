@@ -16,6 +16,24 @@
   --brand-green: #02853f;
   --brand-red: #86171b;
   --rule: #0b0c0e2e;
+  /* The contact slabs, one per bar of the AJ logo: the front face in the
+     brand colour, the top face (where the link sits) one step darker, the
+     sides two steps and the hidden faces three. Same in both themes. */
+  --slab-blue: #3a8de0;
+  --slab-blue-top: #2a6fb6;
+  --slab-blue-side: #215a94;
+  --slab-blue-deep: #18436f;
+  --slab-green: #079a4a;
+  --slab-green-top: #067a3b;
+  --slab-green-side: #05612f;
+  --slab-green-deep: #034621;
+  --slab-red: #b0292f;
+  --slab-red-top: #8e2127;
+  --slab-red-side: #731a1f;
+  --slab-red-deep: #531216;
+  --on-slab: #fff;
+  /* Whiteboard marker: the hero name on the board, in either theme. */
+  --marker: #17191c;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   color-scheme: light;
 }
@@ -151,6 +169,9 @@
     height: max(100cqh, 45.09cqw);
     left: calc((100cqw - max(100cqw, 221.8cqh)) * var(--ox, 0.6));
     top: calc((100cqh - max(100cqh, 45.09cqw)) * 0.5);
+  }
+  /* Set by the script while the hero is on screen and scroll-driven. */
+  .hero[data-live] .hero-canvas {
     will-change: transform;
   }
   /* The camera walks into the matrix drawn on the board: the plate (the
@@ -179,12 +200,14 @@
     transform: scale(calc(1 - 0.12 * var(--recede, 0)));
     transform-origin: 0 100%;
   }
+  /* Drawn like marker strokes: each is a 2px square the script stretches
+     into a column (scale on y) or a row (scale on x). */
   .hero-lines span {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 1px;
-    height: 1px;
+    left: -1px;
+    top: -1px;
+    width: 2px;
+    height: 2px;
     background: var(--ink);
     transform-origin: 0 0;
   }
@@ -204,6 +227,18 @@
     }
     .hero-canvas {
       --ox: 0.5;
+    }
+    /* Marker ink on the white board; the white copy fades in with the dim
+       and the ink copy goes in its last stretch, so the edges stay clean. */
+    .hero-name-ink {
+      color: var(--marker);
+      opacity: calc(1 - max(0, var(--dim, 0) - 0.8) * 5);
+    }
+    .hero-name::after {
+      content: attr(data-text);
+      content: attr(data-text) / ''; /* drawn only: kept out of the accessible name */
+      grid-area: 1 / 1;
+      opacity: var(--dim, 0);
     }
     .hero-name {
       font-size: clamp(5rem, 10.6vw, 13rem);
@@ -238,6 +273,415 @@
   @media (prefers-reduced-motion: reduce) {
     .hero-lines {
       display: none;
+    }
+  }
+
+  /* Projects entrance (app/components/projects/projectStack.js). One
+     progress value, --p, is written on .pstack; each plane derives its own
+     eased progress from it with a delay, so the planes travel at different
+     rates. Sizes are in container units of the stage box. */
+  .pstack {
+    --p: 0;
+    --mx: 0;
+    --my: 0;
+  }
+  .pstack-pin {
+    height: 600px;
+    padding-top: 96px;
+  }
+  .pstack-box {
+    container-type: size;
+    perspective: 1100px;
+    perspective-origin: 60% 45%;
+  }
+  .pstack-title {
+    transform: translate3d(0, calc(var(--p) * -24px), 0);
+  }
+  .pstack-rig {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transform-origin: var(--cx) var(--cy);
+    /* The rig's own box would swallow clicks meant for the planes. */
+    pointer-events: none;
+    --r: clamp(0, (var(--p) - 0.04) / 0.62, 1);
+    --flat: calc(1 - var(--r) * var(--r) * (3 - 2 * var(--r)));
+    transform: rotateX(calc((var(--rx) - var(--my) * 3deg) * var(--flat)))
+      rotateY(calc((var(--ry) + var(--mx) * 5deg) * var(--flat)))
+      rotateZ(calc(var(--rz) * var(--flat)));
+    /* Phone deck */
+    --w: calc((100cqw - 1rem) / 2);
+    --h: calc(var(--w) * 0.625 + 2.5rem);
+    --cx: 50cqw;
+    --cy: 62cqh;
+    --rx: 16deg;
+    --ry: -20deg;
+    --rz: 6deg;
+  }
+  .pstack-plane {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--w);
+    transform-origin: 50% 50%;
+    pointer-events: auto;
+    --q: clamp(0, (var(--p) - 0.06 - var(--d)) / 0.55, 1);
+    --e: calc(var(--q) * var(--q) * (3 - 2 * var(--q)));
+    --x0: calc(var(--cx) - var(--w) / 2 + var(--dx));
+    --y0: calc(var(--cy) - var(--h) / 2 + var(--dy));
+    transform: translate3d(
+        calc(var(--x0) + (var(--x1) - var(--x0)) * var(--e)),
+        calc(var(--y0) + (var(--y1) - var(--y0)) * var(--e)),
+        calc(var(--z) * (1 - var(--e)))
+      )
+      rotateZ(calc(var(--t) * (1 - var(--e))))
+      scale(calc(var(--s) + (1 - var(--s)) * var(--e)));
+    --s: 1;
+    /* Phone: the deck lands as a flat two by two grid on the stage floor. */
+    --w2: calc((100cqw - 1rem) / 2);
+    --x1: calc(var(--col) * (var(--w2) + 1rem) + (var(--w2) - var(--w)) / 2);
+    --y1: calc(100cqh - var(--h) - (1 - var(--row)) * (var(--w2) * 0.625 + 2.5rem + 1rem));
+    --s: 1;
+  }
+  .pstack-plane:nth-child(1) { --i: 0; --col: 0; --row: 0; --dx: -36px; --dy: 48px; --z: 90px; --t: -3deg; --d: 0; }
+  .pstack-plane:nth-child(2) { --i: 1; --col: 1; --row: 0; --dx: 0px; --dy: 0px; --z: 10px; --t: 2deg; --d: 0.06; }
+  .pstack-plane:nth-child(3) { --i: 2; --col: 0; --row: 1; --dx: 36px; --dy: -48px; --z: -90px; --t: -1deg; --d: 0.12; }
+  .pstack-plane:nth-child(4) { --i: 3; --col: 1; --row: 1; --dx: 72px; --dy: -96px; --z: -180px; --t: 3deg; --d: 0.18; }
+  .pstack-plane:nth-child(n + 5) { display: none; }
+
+  .pstack-card {
+    transition: transform 180ms var(--ease-out);
+  }
+  .pstack-caption {
+    transition: background-color 180ms var(--ease-out), color 180ms var(--ease-out);
+  }
+  .pstack-card:hover .pstack-caption,
+  .pstack-card:focus-visible .pstack-caption {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .pstack-card:hover .pstack-caption .text-muted,
+  .pstack-card:focus-visible .pstack-caption .text-muted {
+    color: var(--paper);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .pstack-card:hover {
+      transform: translate3d(0, -8px, 0);
+    }
+  }
+
+  /* The preview that opens over the landed row (desktop only). */
+  .pstack-heading {
+    transform-origin: 0 0;
+    transition: transform 420ms var(--ease-out);
+  }
+  .pstack-legend {
+    transition: opacity 200ms var(--ease-out);
+  }
+  .pstack-panel {
+    position: absolute;
+    inset: 0 0 calc((100cqw - 6rem) / 4 * 0.625 + 52px + 2rem);
+    padding-top: calc(var(--title-size) * 0.75);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, 16px, 0);
+    transition:
+      opacity 260ms var(--ease-out),
+      transform 260ms var(--ease-out),
+      visibility 0s 260ms;
+  }
+  /* Short screens: the summary in two lines and no role and stack (the
+     index below has them), so the links stay above the row. */
+  @media (max-height: 820px) {
+    .pstack-details > p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .pstack-details dl {
+      display: none;
+    }
+  }
+  .pstack[data-landed][data-preview] .pstack-heading {
+    transform: scale(0.34);
+  }
+  .pstack[data-landed][data-preview] .pstack-legend {
+    opacity: 0;
+  }
+  .pstack[data-landed][data-preview] .pstack-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 80ms, 80ms, 0s;
+  }
+  .pstack[data-preview] .pstack-plane[data-current] .pstack-caption {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .pstack[data-preview] .pstack-plane[data-current] .pstack-caption .text-muted {
+    color: var(--paper);
+  }
+
+  @media (min-width: 1024px) {
+    .pstack-pin {
+      height: 100svh;
+      min-height: 680px;
+      padding-top: 104px;
+      padding-bottom: 40px;
+    }
+    .pstack-box {
+      perspective: 1600px;
+      perspective-origin: 62% 42%;
+      /* Same value as the text-name-wide token, so the preview can start
+         just under the shrunken title. */
+      --title-size: clamp(5.5rem, min(13vw, (100svh - 500px) * 0.6), 13rem);
+    }
+    .pstack-rig {
+      /* Four planes, landing as a row of four along the stage floor. */
+      --w: calc((100cqw - 6rem) / 4);
+      --h: calc(var(--w) * 0.625 + 52px);
+      --cx: 64cqw;
+      --cy: 50cqh;
+      --rx: 26deg;
+      --ry: -32deg;
+      --rz: 7deg;
+    }
+    .pstack-plane {
+      --s: 1.12;
+      --x1: calc((var(--w) + 2rem) * var(--i));
+      --y1: calc(100cqh - var(--h));
+    }
+    .pstack-plane:nth-child(1) { --dx: -50px; --dy: 150px; --z: 230px; }
+    .pstack-plane:nth-child(2) { --dx: -40px; --dy: 30px; --z: 70px; }
+    .pstack-plane:nth-child(3) { --dx: 70px; --dy: -60px; --z: -100px; --t: -2deg; }
+    .pstack-plane:nth-child(4) { --dx: 180px; --dy: -150px; --z: -280px; --t: 4deg; }
+  }
+  @media (prefers-reduced-motion: no-preference) and (min-width: 1024px) {
+    .js .pstack {
+      height: 200svh;
+    }
+    .js .pstack-pin {
+      position: sticky;
+      top: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pstack {
+      --p: 1;
+    }
+    .pstack-card,
+    .pstack-card:hover {
+      transition: none;
+      transform: none;
+    }
+    .pstack-heading,
+    .pstack-legend,
+    .pstack-panel {
+      transition: none;
+    }
+  }
+
+  /* Contact slabs (app/components/contact/socialSlabs.js). Each slab is a
+     box of six faces; --k (how open it is) is written per slab, --px/--py
+     (pointer tilt) on the stage. Sizes are in container units. */
+  .slabs {
+    position: relative;
+    height: 420px;
+    container-type: size;
+    perspective: 900px;
+    perspective-origin: 50% 0%;
+    --px: 0;
+    --py: 0;
+  }
+  .slabs-group {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    /* The group's own box sits at z 0 and would take the clicks meant for
+       the slabs pushed behind it (LinkedIn); only the slabs take them. */
+    pointer-events: none;
+    transform-origin: var(--cx) var(--cy);
+    transform: rotateX(calc(var(--py) * -6deg)) rotateY(calc(var(--px) * 8deg));
+    --w: 92cqw;
+    --h: 56px;
+    --d: 76px;
+    --cx: 50cqw;
+    --cy: 36cqh;
+  }
+  .slab-item {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    pointer-events: none;
+  }
+  .slab {
+    --k: 0;
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    left: calc(var(--cx) - var(--w) / 2);
+    top: calc(var(--cy) - var(--h) / 2 + var(--row) * var(--h));
+    transform-style: preserve-3d;
+    pointer-events: auto;
+    transform: translate3d(calc(var(--ox) * var(--k)), calc(var(--oy) * var(--k)), calc(var(--oz) * var(--k)))
+      rotateX(calc(var(--rx) * var(--k))) rotateY(calc(var(--ry) * var(--k)));
+  }
+  .slab:focus-visible {
+    outline: none;
+  }
+  .slab:focus-visible .slab-top {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+  }
+  /* A keyboard can reach the slabs before the scroll has opened them: with
+     focus inside, all three are open so the focused face reads in full. */
+  .slabs:focus-within .slab {
+    --k: 1 !important;
+  }
+  .slab[data-tone='blue'] {
+    --row: -1;
+    --c: var(--slab-blue);
+    --c-top: var(--slab-blue-top);
+    --c-side: var(--slab-blue-side);
+    --c-deep: var(--slab-blue-deep);
+    --ox: 0px;
+    --oy: -18cqh;
+    --oz: -30px;
+    --rx: -62deg;
+    --ry: 0deg;
+  }
+  .slab[data-tone='green'] {
+    --row: 0;
+    --c: var(--slab-green);
+    --c-top: var(--slab-green-top);
+    --c-side: var(--slab-green-side);
+    --c-deep: var(--slab-green-deep);
+    --ox: 0px;
+    --oy: 9cqh;
+    --oz: 30px;
+    --rx: -62deg;
+    --ry: 0deg;
+  }
+  .slab[data-tone='red'] {
+    --row: 1;
+    --c: var(--slab-red);
+    --c-top: var(--slab-red-top);
+    --c-side: var(--slab-red-side);
+    --c-deep: var(--slab-red-deep);
+    --ox: 0px;
+    --oy: 28cqh;
+    --oz: 80px;
+    --rx: -62deg;
+    --ry: 0deg;
+  }
+  .slab-face {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    backface-visibility: hidden;
+  }
+  .slab-front,
+  .slab-back {
+    width: var(--w);
+    height: var(--h);
+    margin: calc(var(--h) / -2) 0 0 calc(var(--w) / -2);
+  }
+  .slab-top,
+  .slab-bottom {
+    width: var(--w);
+    height: var(--d);
+    margin: calc(var(--d) / -2) 0 0 calc(var(--w) / -2);
+  }
+  .slab-left,
+  .slab-right {
+    width: var(--d);
+    height: var(--h);
+    margin: calc(var(--h) / -2) 0 0 calc(var(--d) / -2);
+  }
+  .slab-front {
+    background: var(--c);
+    transform: translateZ(calc(var(--d) / 2));
+  }
+  .slab-back {
+    background: var(--c-deep);
+    transform: rotateY(180deg) translateZ(calc(var(--d) / 2));
+  }
+  .slab-top {
+    background: var(--c-top);
+    color: var(--on-slab);
+    transform: rotateX(90deg) translateZ(calc(var(--h) / 2));
+    transition: background-color 180ms var(--ease-out);
+  }
+  .slab-bottom {
+    background: var(--c-deep);
+    transform: rotateX(-90deg) translateZ(calc(var(--h) / 2));
+  }
+  .slab-left {
+    background: var(--c-side);
+    transform: rotateY(-90deg) translateZ(calc(var(--w) / 2));
+  }
+  .slab-right {
+    background: var(--c-side);
+    transform: rotateY(90deg) translateZ(calc(var(--w) / 2));
+  }
+  .slab-top > * {
+    opacity: min(1, var(--k) * 2.5 - 0.25);
+  }
+  .slab-arrow {
+    transition: transform 180ms var(--ease-out);
+  }
+  /* Pointed at, the top face goes a step darker: the white text keeps its
+     contrast (the brand colour itself is too light for the small handle). */
+  .slab:hover .slab-top,
+  .slab:focus-visible .slab-top {
+    background: var(--c-side);
+  }
+  .slab:hover .slab-arrow,
+  .slab:focus-visible .slab-arrow {
+    transform: translate(4px, -4px);
+  }
+  @media (min-width: 1024px) {
+    .slabs {
+      height: min(640px, 76svh);
+      perspective: 1300px;
+      perspective-origin: 60% 0%;
+    }
+    .slabs-group {
+      --w: min(76cqw, 540px);
+      --h: clamp(72px, 13cqh, 100px);
+      --d: clamp(96px, 18cqh, 132px);
+      --cx: 52cqw;
+      --cy: 36cqh;
+    }
+    .slab[data-tone='blue'] {
+      --ox: -4cqw;
+      --oy: -10cqh;
+      --oz: -60px;
+      --ry: -8deg;
+    }
+    .slab[data-tone='green'] {
+      --ox: 5cqw;
+      --oy: 7cqh;
+      --oz: 50px;
+      --ry: 6deg;
+    }
+    .slab[data-tone='red'] {
+      --ox: -1cqw;
+      --oy: 22cqh;
+      --oz: 120px;
+      --ry: -4deg;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .slab {
+      --k: 1;
+    }
+    .slab-top,
+    .slab-arrow {
+      transition: none;
     }
   }
 
